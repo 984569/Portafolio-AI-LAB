@@ -108,10 +108,7 @@ proveedor de prueba explícito. Consulta [estado](docs/STATUS.md),
 Los históricos se descargaron realmente y los benchmarks se verificaron en
 2022–2023. 2024 sigue bloqueado. Agent Desk se verificó con datos reales,
 respuestas de prueba etiquetadas e inferencia autenticada de Analyst y Judge
-mediante una ruta gratuita fija de OpenRouter. La guía y el documento de Fase 3
-se usaron para redactar los [materiales académicos](docs/academic/fase4-contenido/07-instrucciones-integracion.md).
-La evaluación final de 2024 y la validación necesaria para sustentar TRL 5
-siguen pendientes.
+mediante una ruta gratuita fija de OpenRouter. 
 
 Si el proveedor falla, el pipeline termina con error y conserva el diagnóstico;
 no crea históricos sintéticos. Los precios descargados permanecen en `.runtime/`
