@@ -1,0 +1,301 @@
+{
+  "browser": "Chromium",
+  "build": "production",
+  "case_count": 2,
+  "viewport_widths": [
+    1440,
+    390
+  ],
+  "fixtures_enabled": false,
+  "holdout_2024_evaluated": false,
+  "database": ".runtime\\e2e-training-33e37d0e-eee3-4176-8b7a-287c914939a5\\portfolio.sqlite3",
+  "training": [
+    {
+      "id": "7e027667-6e4f-4a2f-ae03-48940804235f",
+      "status": "completed",
+      "config": {
+        "name": "E2E hist\u00f3rico PPO",
+        "algorithm": "ppo",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 256,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          32,
+          32
+        ],
+        "checkpoint_frequency": 256,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2021-12-31",
+        "ppo": {
+          "learning_rate": 0.0003,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.0003,
+          "buffer_size": 20000,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 32,
+          "noise_sigma": 0.1
+        }
+      },
+      "progress": {
+        "timesteps": 256,
+        "requested_timesteps": 256,
+        "progress": 1.0,
+        "elapsed_seconds": 17.468000000109896,
+        "rss_mb": 355.98828125,
+        "learning_metrics": {
+          "train/learning_rate": 0.0003,
+          "train/entropy_loss": -14.18695363998413,
+          "train/policy_gradient_loss": -0.02111050528474152,
+          "train/value_loss": 0.1908238273113966,
+          "train/approx_kl": 0.0016459664329886436,
+          "train/clip_fraction": 0.0,
+          "train/loss": -0.002538289874792099,
+          "train/explained_variance": -46.983394622802734,
+          "train/std": 0.9993489384651184,
+          "train/n_updates": 5.0,
+          "train/clip_range": 0.2
+        },
+        "peak_rss_mb": 367.58203125,
+        "cpu_seconds": 14.109375
+      },
+      "cancel_requested": false,
+      "artifacts": {
+        "model.zip": "4a4abe870cc6312988ae22807b062594ac8b196b89a36e1ef93892e7d58b550b",
+        "normalizer.json": "0a51ffaecceb6a5ff51d3b7ab508c932fdf546fbcb98f19b66c913933c771781"
+      },
+      "metrics": {
+        "cumulative_return": 0.08568233828691274,
+        "annualized_volatility": 0.1431677289953691,
+        "sharpe_ratio": 0.3608514806171056,
+        "max_drawdown": 0.15665718229868186,
+        "final_equity": 10856.823382869126,
+        "total_costs": 726.4071461713111
+      },
+      "validation_first": "2022-01-03",
+      "validation_last": "2023-12-29"
+    },
+    {
+      "id": "76411bd9-04ba-47f3-8ddd-9380b233b4b8",
+      "status": "completed",
+      "config": {
+        "name": "E2E hist\u00f3rico DDPG",
+        "algorithm": "ddpg",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 256,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          32,
+          32
+        ],
+        "checkpoint_frequency": 256,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2021-12-31",
+        "ppo": {
+          "learning_rate": 0.001,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 20000,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 32,
+          "noise_sigma": 0.1
+        }
+      },
+      "progress": {
+        "timesteps": 256,
+        "requested_timesteps": 256,
+        "progress": 1.0,
+        "elapsed_seconds": 21.015999999828637,
+        "rss_mb": 449.0703125,
+        "learning_metrics": {
+          "train/learning_rate": 0.001,
+          "train/n_updates": 224.0,
+          "train/actor_loss": 0.006399431731551886,
+          "train/critic_loss": 5.794929529656656e-05
+        },
+        "peak_rss_mb": 554.50390625,
+        "cpu_seconds": 17.3125
+      },
+      "cancel_requested": false,
+      "artifacts": {
+        "model.zip": "f0ca539af4304f6b738dc6ca41f349a5bbddd7af64ddb0e961920a60948d80e1",
+        "normalizer.json": "0a51ffaecceb6a5ff51d3b7ab508c932fdf546fbcb98f19b66c913933c771781",
+        "replay_buffer.pkl": "310a7ee30d14cdc3fd173f28747e68d92ea534a833e95f20c20349323007edd2"
+      },
+      "metrics": {
+        "cumulative_return": -0.37515377012631357,
+        "annualized_volatility": 0.1624028753521598,
+        "sharpe_ratio": -1.377556617242,
+        "max_drawdown": 0.41381111303043816,
+        "final_equity": 6248.462298736865,
+        "total_costs": 3329.9570494692653
+      },
+      "validation_first": "2022-01-03",
+      "validation_last": "2023-12-29"
+    },
+    {
+      "id": "8412dcd3-7109-4f2a-8959-b4e5a00da8d8",
+      "status": "cancelled",
+      "config": {
+        "name": "E2E cancelaci\u00f3n hist\u00f3rica",
+        "algorithm": "ppo",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 16384,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          32,
+          32
+        ],
+        "checkpoint_frequency": 4096,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2021-12-31",
+        "ppo": {
+          "learning_rate": 0.0003,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.0003,
+          "buffer_size": 20000,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 32,
+          "noise_sigma": 0.1
+        }
+      },
+      "progress": {
+        "timesteps": 1,
+        "requested_timesteps": 16384,
+        "progress": 6.103515625e-05,
+        "elapsed_seconds": 16.156999999890104,
+        "rss_mb": 351.66796875,
+        "learning_metrics": {},
+        "peak_rss_mb": 363.76171875,
+        "cpu_seconds": 12.984375
+      },
+      "cancel_requested": true,
+      "artifacts": {
+        "model.zip": "13ea1e570523c10a267aee3fc552321260c2792404b4e85bf38adfaff46374d7",
+        "normalizer.json": "0a51ffaecceb6a5ff51d3b7ab508c932fdf546fbcb98f19b66c913933c771781"
+      },
+      "metrics": null,
+      "validation_first": null,
+      "validation_last": null
+    }
+  ],
+  "replays": [
+    {
+      "id": "d2050e81-30e4-42ce-81e2-4dd01156b489",
+      "status": "completed",
+      "config": {
+        "name": "E2E replay PPO",
+        "strategy": "ppo",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "seed": 42,
+        "split": "validation",
+        "lookback": 60,
+        "risk_aversion": 5.0,
+        "model_id": "7e027667-6e4f-4a2f-ae03-48940804235f"
+      },
+      "metrics": {
+        "cumulative_return": 0.08568233828691274,
+        "annualized_volatility": 0.1431677289953691,
+        "sharpe_ratio": 0.3608514806171056,
+        "max_drawdown": 0.15665718229868186,
+        "final_equity": 10856.823382869126,
+        "total_costs": 726.4071461713111
+      },
+      "matches_saved_evaluation": true
+    },
+    {
+      "id": "e3f6c37e-ea74-48c4-b5c9-6d0332c5d7bd",
+      "status": "completed",
+      "config": {
+        "name": "E2E replay DDPG",
+        "strategy": "ddpg",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "seed": 42,
+        "split": "validation",
+        "lookback": 60,
+        "risk_aversion": 5.0,
+        "model_id": "76411bd9-04ba-47f3-8ddd-9380b233b4b8"
+      },
+      "metrics": {
+        "cumulative_return": -0.37515377012631357,
+        "annualized_volatility": 0.1624028753521598,
+        "sharpe_ratio": -1.377556617242,
+        "max_drawdown": 0.41381111303043816,
+        "final_equity": 6248.462298736865,
+        "total_costs": 3329.9570494692653
+      },
+      "matches_saved_evaluation": true
+    }
+  ]
+}

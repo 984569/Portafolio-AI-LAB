@@ -1,0 +1,532 @@
+[
+  {
+    "id": "af7125d6-ab9a-4a33-8fc5-951d6724b00c",
+    "name": "Hist\u00f3rico verificable \u00b7 markowitz",
+    "status": "completed",
+    "created_at": "2026-11-10T15:03:47.262485Z",
+    "completed_at": "2026-11-10T15:03:49.122686Z",
+    "config": {
+      "name": "Hist\u00f3rico verificable \u00b7 markowitz",
+      "strategy": "markowitz",
+      "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+      "initial_capital": 10000.0,
+      "transaction_cost_bps": 10.0,
+      "risk_free_rate": 0.0,
+      "seed": 42,
+      "split": "validation",
+      "lookback": 60,
+      "risk_aversion": 5.0
+    },
+    "dataset": {
+      "id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+      "kind": "HISTORICAL",
+      "source": "Yahoo Finance public chart HTTP API; exact JSON responses retained",
+      "sha256": "bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+      "assets": [
+        "AAPL",
+        "MSFT",
+        "JPM",
+        "JNJ",
+        "XOM",
+        "PG",
+        "KO",
+        "WMT",
+        "SPY",
+        "GLD"
+      ],
+      "start_date": "2015-01-02",
+      "end_date": "2024-12-31",
+      "observations": 2516,
+      "provenance": {
+        "provider": "Yahoo Finance chart HTTP",
+        "retrieved_at": "2026-11-10T14:43:08.013788Z",
+        "price_basis": "vendor_adjusted_close",
+        "currency": "USD",
+        "start_inclusive": "2015-01-01",
+        "end_exclusive": "2025-01-01",
+        "parameters": {
+          "interval": "1d",
+          "events": "div,splits",
+          "includeAdjustedClose": true
+        },
+        "packages": {
+          "pandas": "3.1.1",
+          "numpy": "2.4.6",
+          "pyarrow": "24.0.0",
+          "exchange-calendars": "4.13.2"
+        },
+        "limitations": [
+          "Public unofficial endpoint: availability, throttling and revisions are not guaranteed.",
+          "Personal educational/research use; provider terms do not imply redistribution rights.",
+          "Adjusted history is retrospectively revised, not a point-in-time vintage database.",
+          "Provider Close may already include split adjustments; it is not an unadjusted quote.",
+          "Corporate-action fields are vendor assertions, not independently reconciled evidence.",
+          "XNYS is the common US equity-session proxy, including Nasdaq-listed instruments.",
+          "The fixed current universe creates a disclosed survivorship/selection limitation.",
+          "No fills, synthetic replacements, dividend double-counting or test-period tuning."
+        ]
+      },
+      "quality_report": {
+        "status": "passed",
+        "calendar": "XNYS",
+        "start_date": "2015-01-02",
+        "end_date": "2024-12-31",
+        "observations": 2516,
+        "assets": [
+          {
+            "symbol": "AAPL",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 1,
+            "adjustment_factor_min": 0.8843591599387434,
+            "adjustment_factor_max": 0.9927953869003239,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "MSFT",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 0,
+            "adjustment_factor_min": 0.847030992356815,
+            "adjustment_factor_max": 0.9864193228116649,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "JPM",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 0,
+            "adjustment_factor_min": 0.733526768790419,
+            "adjustment_factor_max": 0.9607659050044265,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "JNJ",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 0,
+            "adjustment_factor_min": 0.7246205660032243,
+            "adjustment_factor_max": 0.9549389735332651,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "XOM",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 0,
+            "adjustment_factor_min": 0.6116329283351694,
+            "adjustment_factor_max": 0.9456281696793803,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "PG",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 0,
+            "adjustment_factor_min": 0.7147506755097027,
+            "adjustment_factor_max": 0.9467793333475922,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "KO",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 0,
+            "adjustment_factor_min": 0.6933060608549626,
+            "adjustment_factor_max": 0.952834775618579,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "WMT",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 1,
+            "adjustment_factor_min": 0.8057845823055058,
+            "adjustment_factor_max": 0.9842509365746931,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "SPY",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 0,
+            "adjustment_factor_min": 0.8239666421656028,
+            "adjustment_factor_max": 0.9807330196249141,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "GLD",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 0,
+            "split_events": 0,
+            "adjustment_factor_min": 1.0,
+            "adjustment_factor_max": 1.0,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          }
+        ],
+        "missing_data_policy": "Reject; no fill, interpolation or session dropping",
+        "corporate_action_verification": "Schema/numeric consistency only; vendor not independently reconciled",
+        "limitations": [
+          "Public unofficial endpoint: availability, throttling and revisions are not guaranteed.",
+          "Personal educational/research use; provider terms do not imply redistribution rights.",
+          "Adjusted history is retrospectively revised, not a point-in-time vintage database.",
+          "Provider Close may already include split adjustments; it is not an unadjusted quote.",
+          "Corporate-action fields are vendor assertions, not independently reconciled evidence.",
+          "XNYS is the common US equity-session proxy, including Nasdaq-listed instruments.",
+          "The fixed current universe creates a disclosed survivorship/selection limitation.",
+          "No fills, synthetic replacements, dividend double-counting or test-period tuning."
+        ]
+      },
+      "splits": {
+        "train": {
+          "start_date": "2015-01-02",
+          "end_date": "2021-12-31",
+          "observations": 1763,
+          "locked": false
+        },
+        "validation": {
+          "start_date": "2022-01-03",
+          "end_date": "2023-12-29",
+          "observations": 501,
+          "locked": false
+        },
+        "final_test": {
+          "start_date": "2024-01-02",
+          "end_date": "2024-12-31",
+          "observations": 252,
+          "locked": true
+        }
+      }
+    },
+    "error": null,
+    "metrics": {
+      "cumulative_return": -0.30997918167219096,
+      "annualized_volatility": 0.24498767136315075,
+      "sharpe_ratio": -0.6403064374923403,
+      "max_drawdown": 0.3776247944950647,
+      "final_equity": 6900.2081832780905,
+      "total_costs": 1260.4140227902813
+    },
+    "evaluation": {
+      "split": "validation",
+      "start_date": "2022-01-03",
+      "end_date": "2023-12-29",
+      "intervals": 500,
+      "holdout_evaluated": false
+    },
+    "accounting_version": "exact-self-financing-v1",
+    "runtime": {
+      "git_commit": null,
+      "git_dirty": true,
+      "recorded_at": "2026-11-10T15:03:49.036003Z",
+      "dependency_versions": {
+        "fastapi": "0.162.2",
+        "pydantic": "2.14.3",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "pandas": "3.1.1",
+        "pyarrow": "24.0.0",
+        "exchange-calendars": "4.13.2",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2",
+        "torch": "2.15.0+cpu"
+      },
+      "git_reason": "No readable HEAD commit."
+    }
+  },
+  {
+    "id": "07204d9c-0a3a-4f82-93c7-8e5ca32e130f",
+    "name": "Hist\u00f3rico verificable \u00b7 equal_weight",
+    "status": "completed",
+    "created_at": "2026-11-10T15:03:52.487054Z",
+    "completed_at": "2026-11-10T15:03:52.962022Z",
+    "config": {
+      "name": "Hist\u00f3rico verificable \u00b7 equal_weight",
+      "strategy": "equal_weight",
+      "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+      "initial_capital": 10000.0,
+      "transaction_cost_bps": 10.0,
+      "risk_free_rate": 0.0,
+      "seed": 42,
+      "split": "validation",
+      "lookback": 60,
+      "risk_aversion": 5.0
+    },
+    "dataset": {
+      "id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+      "kind": "HISTORICAL",
+      "source": "Yahoo Finance public chart HTTP API; exact JSON responses retained",
+      "sha256": "bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+      "assets": [
+        "AAPL",
+        "MSFT",
+        "JPM",
+        "JNJ",
+        "XOM",
+        "PG",
+        "KO",
+        "WMT",
+        "SPY",
+        "GLD"
+      ],
+      "start_date": "2015-01-02",
+      "end_date": "2024-12-31",
+      "observations": 2516,
+      "provenance": {
+        "provider": "Yahoo Finance chart HTTP",
+        "retrieved_at": "2026-11-10T14:43:08.013788Z",
+        "price_basis": "vendor_adjusted_close",
+        "currency": "USD",
+        "start_inclusive": "2015-01-01",
+        "end_exclusive": "2025-01-01",
+        "parameters": {
+          "interval": "1d",
+          "events": "div,splits",
+          "includeAdjustedClose": true
+        },
+        "packages": {
+          "pandas": "3.1.1",
+          "numpy": "2.4.6",
+          "pyarrow": "24.0.0",
+          "exchange-calendars": "4.13.2"
+        },
+        "limitations": [
+          "Public unofficial endpoint: availability, throttling and revisions are not guaranteed.",
+          "Personal educational/research use; provider terms do not imply redistribution rights.",
+          "Adjusted history is retrospectively revised, not a point-in-time vintage database.",
+          "Provider Close may already include split adjustments; it is not an unadjusted quote.",
+          "Corporate-action fields are vendor assertions, not independently reconciled evidence.",
+          "XNYS is the common US equity-session proxy, including Nasdaq-listed instruments.",
+          "The fixed current universe creates a disclosed survivorship/selection limitation.",
+          "No fills, synthetic replacements, dividend double-counting or test-period tuning."
+        ]
+      },
+      "quality_report": {
+        "status": "passed",
+        "calendar": "XNYS",
+        "start_date": "2015-01-02",
+        "end_date": "2024-12-31",
+        "observations": 2516,
+        "assets": [
+          {
+            "symbol": "AAPL",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 1,
+            "adjustment_factor_min": 0.8843591599387434,
+            "adjustment_factor_max": 0.9927953869003239,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "MSFT",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 0,
+            "adjustment_factor_min": 0.847030992356815,
+            "adjustment_factor_max": 0.9864193228116649,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "JPM",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 0,
+            "adjustment_factor_min": 0.733526768790419,
+            "adjustment_factor_max": 0.9607659050044265,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "JNJ",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 0,
+            "adjustment_factor_min": 0.7246205660032243,
+            "adjustment_factor_max": 0.9549389735332651,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "XOM",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 0,
+            "adjustment_factor_min": 0.6116329283351694,
+            "adjustment_factor_max": 0.9456281696793803,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "PG",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 0,
+            "adjustment_factor_min": 0.7147506755097027,
+            "adjustment_factor_max": 0.9467793333475922,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "KO",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 0,
+            "adjustment_factor_min": 0.6933060608549626,
+            "adjustment_factor_max": 0.952834775618579,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "WMT",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 1,
+            "adjustment_factor_min": 0.8057845823055058,
+            "adjustment_factor_max": 0.9842509365746931,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "SPY",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 40,
+            "split_events": 0,
+            "adjustment_factor_min": 0.8239666421656028,
+            "adjustment_factor_max": 0.9807330196249141,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          },
+          {
+            "symbol": "GLD",
+            "observations": 2516,
+            "missing_sessions": 0,
+            "duplicate_sessions": 0,
+            "invalid_price_cells": 0,
+            "dividend_events": 0,
+            "split_events": 0,
+            "adjustment_factor_min": 1.0,
+            "adjustment_factor_max": 1.0,
+            "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+          }
+        ],
+        "missing_data_policy": "Reject; no fill, interpolation or session dropping",
+        "corporate_action_verification": "Schema/numeric consistency only; vendor not independently reconciled",
+        "limitations": [
+          "Public unofficial endpoint: availability, throttling and revisions are not guaranteed.",
+          "Personal educational/research use; provider terms do not imply redistribution rights.",
+          "Adjusted history is retrospectively revised, not a point-in-time vintage database.",
+          "Provider Close may already include split adjustments; it is not an unadjusted quote.",
+          "Corporate-action fields are vendor assertions, not independently reconciled evidence.",
+          "XNYS is the common US equity-session proxy, including Nasdaq-listed instruments.",
+          "The fixed current universe creates a disclosed survivorship/selection limitation.",
+          "No fills, synthetic replacements, dividend double-counting or test-period tuning."
+        ]
+      },
+      "splits": {
+        "train": {
+          "start_date": "2015-01-02",
+          "end_date": "2021-12-31",
+          "observations": 1763,
+          "locked": false
+        },
+        "validation": {
+          "start_date": "2022-01-03",
+          "end_date": "2023-12-29",
+          "observations": 501,
+          "locked": false
+        },
+        "final_test": {
+          "start_date": "2024-01-02",
+          "end_date": "2024-12-31",
+          "observations": 252,
+          "locked": true
+        }
+      }
+    },
+    "error": null,
+    "metrics": {
+      "cumulative_return": 0.14488553942049065,
+      "annualized_volatility": 0.14266755012381652,
+      "sharpe_ratio": 0.5492339460314231,
+      "max_drawdown": 0.14701814278123804,
+      "final_equity": 11448.855394204907,
+      "total_costs": 50.81620730546892
+    },
+    "evaluation": {
+      "split": "validation",
+      "start_date": "2022-01-03",
+      "end_date": "2023-12-29",
+      "intervals": 500,
+      "holdout_evaluated": false
+    },
+    "accounting_version": "exact-self-financing-v1",
+    "runtime": {
+      "git_commit": null,
+      "git_dirty": true,
+      "recorded_at": "2026-11-10T15:03:52.864016Z",
+      "dependency_versions": {
+        "fastapi": "0.162.2",
+        "pydantic": "2.14.3",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "pandas": "3.1.1",
+        "pyarrow": "24.0.0",
+        "exchange-calendars": "4.13.2",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2",
+        "torch": "2.15.0+cpu"
+      },
+      "git_reason": "No readable HEAD commit."
+    }
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "selection_period": "walk_forward_2019_2021_only",
+  "validation_period": "2022-2023_independent",
+  "final_holdout": "2024_locked",
+  "lookback": 60,
+  "initial_capital": 10000,
+  "transaction_cost_bps": 10,
+  "risk_free_rate": 0,
+  "reward_mode": "log_return",
+  "risk_penalty": 0,
+  "normalize_observations": true,
+  "development_seed": 42,
+  "final_seeds": [7, 42, 123],
+  "candidates": {"ppo": [0.0003, 0.0001], "ddpg": [0.001, 0.0003]},
+  "walk_forward_timesteps": 2048,
+  "initial_timesteps": {"ppo": 16384, "ddpg": 8192},
+  "checkpoint_frequency": 4096,
+  "max_seconds_per_job": 600,
+  "max_memory_mb": 2048,
+  "selection_metric": "mean_predeclared_fold_sharpe",
+  "notes": "Small controlled initial study, not optimal hyperparameters or production evidence. Report every seed."
+}

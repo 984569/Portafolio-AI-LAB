@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-ai-lab",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.28.2",
+  "scripts": {
+    "dev": "pnpm --filter @portfolio/web dev",
+    "build": "pnpm --filter @portfolio/web build",
+    "typecheck": "pnpm --filter @portfolio/web typecheck",
+    "lint": "pnpm --filter @portfolio/web lint",
+    "test:e2e": "playwright test",
+    "test:e2e:historical": "playwright test --config playwright.historical.config.ts",
+    "contracts": "uv run python scripts/export_openapi.py && openapi-typescript packages/contracts/openapi.json -o packages/contracts/schema.d.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "openapi-typescript": "^7.10.1"
+  }
+}

@@ -1,0 +1,2534 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Portfolio AI Lab API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/v1/agent-desk/status": {
+      "get": {
+        "summary": "Desk Status",
+        "operationId": "desk_status_api_v1_agent_desk_status_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeskAvailability"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/agent-desk/runs": {
+      "get": {
+        "summary": "Desk Runs",
+        "operationId": "desk_runs_api_v1_agent_desk_runs_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeskRunList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Submit Run",
+        "operationId": "submit_run_api_v1_agent_desk_runs_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeskRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeskRun"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/agent-desk/runs/{run_id}": {
+      "get": {
+        "summary": "Desk Run",
+        "operationId": "desk_run_api_v1_agent_desk_runs__run_id__get",
+        "parameters": [
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Run Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeskRun"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ready": {
+      "get": {
+        "summary": "Ready",
+        "operationId": "ready_ready_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ready"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/datasets": {
+      "get": {
+        "summary": "Datasets",
+        "operationId": "datasets_api_v1_datasets_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatasetList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/experiments": {
+      "get": {
+        "summary": "Experiments",
+        "operationId": "experiments_api_v1_experiments_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExperimentList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Submit",
+        "operationId": "submit_api_v1_experiments_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExperimentConfig"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Experiment"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/experiments/{experiment_id}": {
+      "get": {
+        "summary": "Experiment Detail",
+        "operationId": "experiment_detail_api_v1_experiments__experiment_id__get",
+        "parameters": [
+          {
+            "name": "experiment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Experiment Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Experiment"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/training": {
+      "get": {
+        "summary": "Training List",
+        "operationId": "training_list_api_v1_training_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingJobList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Training Submit",
+        "operationId": "training_submit_api_v1_training_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TrainingRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "202": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingJob"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/training/{job_id}": {
+      "get": {
+        "summary": "Training Detail",
+        "operationId": "training_detail_api_v1_training__job_id__get",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingJob"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/training/{job_id}/cancel": {
+      "post": {
+        "summary": "Training Cancel",
+        "operationId": "training_cancel_api_v1_training__job_id__cancel_post",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingJob"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/models": {
+      "get": {
+        "summary": "Models List",
+        "operationId": "models_list_api_v1_models_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/training/{job_id}/evaluate": {
+      "post": {
+        "summary": "Training Evaluate",
+        "operationId": "training_evaluate_api_v1_training__job_id__evaluate_post",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/training/{job_id}/compare": {
+      "post": {
+        "summary": "Training Compare",
+        "operationId": "training_compare_api_v1_training__job_id__compare_post",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonReport"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Allocation": {
+        "properties": {
+          "date": {
+            "type": "string",
+            "title": "Date"
+          },
+          "weights": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Weights"
+          },
+          "turnover": {
+            "type": "number",
+            "title": "Turnover"
+          },
+          "cost": {
+            "type": "number",
+            "title": "Cost"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "date",
+          "weights",
+          "turnover",
+          "cost"
+        ],
+        "title": "Allocation"
+      },
+      "Analysis": {
+        "properties": {
+          "trend": {
+            "type": "string",
+            "enum": [
+              "up",
+              "down",
+              "mixed"
+            ],
+            "title": "Trend"
+          },
+          "regime": {
+            "type": "string",
+            "enum": [
+              "low",
+              "moderate",
+              "high"
+            ],
+            "title": "Regime"
+          },
+          "evidence": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "market_return",
+                "market_volatility"
+              ]
+            },
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 1,
+            "title": "Evidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "trend",
+          "regime",
+          "evidence"
+        ],
+        "title": "Analysis"
+      },
+      "AuditEvent": {
+        "properties": {
+          "date": {
+            "type": "string",
+            "title": "Date"
+          },
+          "event": {
+            "type": "string",
+            "title": "Event"
+          },
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "date",
+          "event",
+          "detail"
+        ],
+        "title": "AuditEvent"
+      },
+      "Candidate": {
+        "properties": {
+          "strategy": {
+            "type": "string",
+            "enum": [
+              "equal_weight",
+              "markowitz",
+              "ppo",
+              "ddpg"
+            ],
+            "title": "Strategy"
+          },
+          "model_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Id"
+          },
+          "weights": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Weights"
+          },
+          "annualized_volatility": {
+            "type": "number",
+            "title": "Annualized Volatility"
+          },
+          "turnover": {
+            "type": "number",
+            "title": "Turnover"
+          },
+          "fee_bps": {
+            "type": "number",
+            "title": "Fee Bps"
+          },
+          "optimizer_fallback": {
+            "type": "boolean",
+            "title": "Optimizer Fallback",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "strategy",
+          "weights",
+          "annualized_volatility",
+          "turnover",
+          "fee_bps"
+        ],
+        "title": "Candidate"
+      },
+      "ComparisonItem": {
+        "properties": {
+          "algorithm": {
+            "type": "string",
+            "enum": [
+              "ppo",
+              "ddpg",
+              "markowitz",
+              "equal_weight"
+            ],
+            "title": "Algorithm"
+          },
+          "model_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Id"
+          },
+          "seed": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seed"
+          },
+          "timesteps": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timesteps"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/Metrics"
+          },
+          "research_metrics": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Research Metrics"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "algorithm",
+          "model_id",
+          "seed",
+          "timesteps",
+          "metrics",
+          "research_metrics"
+        ],
+        "title": "ComparisonItem"
+      },
+      "ComparisonReport": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ComparisonItem"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "methodology": {
+            "type": "string",
+            "title": "Methodology"
+          },
+          "holdout_2024_evaluated": {
+            "type": "boolean",
+            "title": "Holdout 2024 Evaluated",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "items",
+          "methodology"
+        ],
+        "title": "ComparisonReport"
+      },
+      "DDPGSettings": {
+        "properties": {
+          "learning_rate": {
+            "type": "number",
+            "maximum": 0.01,
+            "exclusiveMinimum": 0.0,
+            "title": "Learning Rate",
+            "default": 0.001
+          },
+          "buffer_size": {
+            "type": "integer",
+            "maximum": 100000.0,
+            "minimum": 128.0,
+            "title": "Buffer Size",
+            "default": 20000
+          },
+          "batch_size": {
+            "type": "integer",
+            "maximum": 256.0,
+            "minimum": 8.0,
+            "title": "Batch Size",
+            "default": 64
+          },
+          "gamma": {
+            "type": "number",
+            "maximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Gamma",
+            "default": 0.99
+          },
+          "tau": {
+            "type": "number",
+            "maximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Tau",
+            "default": 0.005
+          },
+          "train_freq": {
+            "type": "integer",
+            "maximum": 8.0,
+            "minimum": 1.0,
+            "title": "Train Freq",
+            "default": 1
+          },
+          "gradient_steps": {
+            "type": "integer",
+            "maximum": 4.0,
+            "minimum": 1.0,
+            "title": "Gradient Steps",
+            "default": 1
+          },
+          "learning_starts": {
+            "type": "integer",
+            "maximum": 10000.0,
+            "minimum": 0.0,
+            "title": "Learning Starts",
+            "default": 256
+          },
+          "noise_sigma": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Noise Sigma",
+            "default": 0.1
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "DDPGSettings"
+      },
+      "Dataset": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "FIXTURE",
+              "HISTORICAL"
+            ],
+            "title": "Kind"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "sha256": {
+            "type": "string",
+            "title": "Sha256"
+          },
+          "assets": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Assets"
+          },
+          "start_date": {
+            "type": "string",
+            "title": "Start Date"
+          },
+          "end_date": {
+            "type": "string",
+            "title": "End Date"
+          },
+          "observations": {
+            "type": "integer",
+            "title": "Observations"
+          },
+          "provenance": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Provenance"
+          },
+          "quality_report": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Quality Report"
+          },
+          "splits": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Splits"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "source",
+          "sha256",
+          "assets",
+          "start_date",
+          "end_date",
+          "observations"
+        ],
+        "title": "Dataset"
+      },
+      "DatasetList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Dataset"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "DatasetList"
+      },
+      "DeskAvailability": {
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled"
+          },
+          "provider": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "openrouter",
+                  "mock"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Provider"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model"
+          },
+          "endpoint_provider": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Endpoint Provider"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "enabled",
+          "code"
+        ],
+        "title": "DeskAvailability"
+      },
+      "DeskEvent": {
+        "properties": {
+          "stage": {
+            "type": "string",
+            "enum": [
+              "data",
+              "analyst",
+              "strategist",
+              "judge",
+              "risk",
+              "final"
+            ],
+            "title": "Stage"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "completed",
+              "blocked"
+            ],
+            "title": "Status"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "payload": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Payload"
+          },
+          "provider": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ProviderTrace"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "stage",
+          "status",
+          "code"
+        ],
+        "title": "DeskEvent"
+      },
+      "DeskOutcome": {
+        "properties": {
+          "decision": {
+            "type": "string",
+            "enum": [
+              "approved",
+              "watch",
+              "rejected",
+              "blocked"
+            ],
+            "title": "Decision"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "dossier": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Dossier"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "analysis": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Analysis"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "candidate": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Candidate"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "judgment": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Judgment"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "risk": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RiskReport"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "decision",
+          "code"
+        ],
+        "title": "DeskOutcome"
+      },
+      "DeskRequest": {
+        "properties": {
+          "dataset_id": {
+            "type": "string",
+            "pattern": "^historical-[a-f0-9]{64}$",
+            "title": "Dataset Id"
+          },
+          "decision_date": {
+            "type": "string",
+            "title": "Decision Date"
+          },
+          "strategy": {
+            "type": "string",
+            "enum": [
+              "equal_weight",
+              "markowitz",
+              "ppo",
+              "ddpg"
+            ],
+            "title": "Strategy"
+          },
+          "model_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "dataset_id",
+          "decision_date",
+          "strategy"
+        ],
+        "title": "DeskRequest"
+      },
+      "DeskRun": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "running",
+              "completed",
+              "blocked"
+            ],
+            "title": "Status"
+          },
+          "mode": {
+            "type": "string",
+            "const": "PAPER",
+            "title": "Mode",
+            "default": "PAPER"
+          },
+          "scope": {
+            "type": "string",
+            "const": "llm_exploratory_historical",
+            "title": "Scope",
+            "default": "llm_exploratory_historical"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "request": {
+            "$ref": "#/components/schemas/DeskRequest"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/DeskAvailability"
+          },
+          "outcome": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DeskOutcome"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/RecordedEvent"
+            },
+            "type": "array",
+            "title": "Events"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "status",
+          "created_at",
+          "request",
+          "provider"
+        ],
+        "title": "DeskRun"
+      },
+      "DeskRunList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/DeskRun"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "DeskRunList"
+      },
+      "Dossier": {
+        "properties": {
+          "dataset_id": {
+            "type": "string",
+            "pattern": "^historical-[a-f0-9]{64}$",
+            "title": "Dataset Id"
+          },
+          "dataset_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Dataset Sha256"
+          },
+          "decision_date": {
+            "type": "string",
+            "title": "Decision Date"
+          },
+          "information_date": {
+            "type": "string",
+            "title": "Information Date"
+          },
+          "assets": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Assets"
+          },
+          "observations": {
+            "type": "integer",
+            "title": "Observations"
+          },
+          "lookback": {
+            "type": "integer",
+            "title": "Lookback"
+          },
+          "market_return": {
+            "type": "number",
+            "title": "Market Return"
+          },
+          "market_volatility": {
+            "type": "number",
+            "title": "Market Volatility"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "dataset_id",
+          "dataset_sha256",
+          "decision_date",
+          "information_date",
+          "assets",
+          "observations",
+          "lookback",
+          "market_return",
+          "market_volatility"
+        ],
+        "title": "Dossier"
+      },
+      "EquityPoint": {
+        "properties": {
+          "date": {
+            "type": "string",
+            "title": "Date"
+          },
+          "equity": {
+            "type": "number",
+            "title": "Equity"
+          },
+          "net_return": {
+            "type": "number",
+            "title": "Net Return"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "date",
+          "equity",
+          "net_return"
+        ],
+        "title": "EquityPoint"
+      },
+      "Experiment": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "running",
+              "completed",
+              "failed"
+            ],
+            "title": "Status"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          },
+          "completed_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Completed At"
+          },
+          "config": {
+            "$ref": "#/components/schemas/ExperimentConfig"
+          },
+          "dataset": {
+            "$ref": "#/components/schemas/Dataset"
+          },
+          "result": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Result"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "status",
+          "created_at",
+          "completed_at",
+          "config",
+          "dataset",
+          "result",
+          "error"
+        ],
+        "title": "Experiment"
+      },
+      "ExperimentConfig": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Name"
+          },
+          "strategy": {
+            "type": "string",
+            "enum": [
+              "equal_weight",
+              "markowitz",
+              "ppo",
+              "ddpg"
+            ],
+            "title": "Strategy",
+            "default": "equal_weight"
+          },
+          "dataset_id": {
+            "type": "string",
+            "pattern": "^(fixture-v1|historical-[a-f0-9]{12,64})$",
+            "title": "Dataset Id",
+            "default": "fixture-v1"
+          },
+          "initial_capital": {
+            "type": "number",
+            "maximum": 1000000000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Initial Capital",
+            "default": 10000
+          },
+          "transaction_cost_bps": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Transaction Cost Bps",
+            "default": 10
+          },
+          "risk_free_rate": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": -0.99,
+            "title": "Risk Free Rate",
+            "default": 0
+          },
+          "seed": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": 0.0,
+            "title": "Seed",
+            "default": 42
+          },
+          "split": {
+            "type": "string",
+            "enum": [
+              "train",
+              "validation"
+            ],
+            "title": "Split",
+            "default": "validation"
+          },
+          "lookback": {
+            "type": "integer",
+            "maximum": 252.0,
+            "minimum": 2.0,
+            "title": "Lookback",
+            "default": 60
+          },
+          "risk_aversion": {
+            "type": "number",
+            "maximum": 10000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Risk Aversion",
+            "default": 5
+          },
+          "model_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-f0-9-]{36}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "ExperimentConfig"
+      },
+      "ExperimentList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Experiment"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "ExperimentList"
+      },
+      "Gate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "passed": {
+            "type": "boolean",
+            "title": "Passed"
+          },
+          "reason_code": {
+            "type": "string",
+            "title": "Reason Code"
+          },
+          "observed": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed"
+          },
+          "threshold": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Threshold"
+          },
+          "decision_date": {
+            "type": "string",
+            "title": "Decision Date"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name",
+          "passed",
+          "reason_code",
+          "decision_date"
+        ],
+        "title": "Gate"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "Health": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "ok",
+            "title": "Status",
+            "default": "ok"
+          },
+          "service": {
+            "type": "string",
+            "const": "portfolio-ai-lab-api",
+            "title": "Service",
+            "default": "portfolio-ai-lab-api"
+          },
+          "mode": {
+            "type": "string",
+            "const": "PAPER",
+            "title": "Mode",
+            "default": "PAPER"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "Health"
+      },
+      "Judgment": {
+        "properties": {
+          "verdict": {
+            "type": "string",
+            "enum": [
+              "approve",
+              "watch",
+              "reject"
+            ],
+            "title": "Verdict"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "aligned",
+              "concentration",
+              "volatility",
+              "caution"
+            ],
+            "title": "Reason"
+          },
+          "evidence": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "market_return",
+                "market_volatility",
+                "weights",
+                "turnover",
+                "portfolio_volatility"
+              ]
+            },
+            "type": "array",
+            "maxItems": 5,
+            "minItems": 1,
+            "title": "Evidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "verdict",
+          "reason",
+          "evidence"
+        ],
+        "title": "Judgment"
+      },
+      "Metrics": {
+        "properties": {
+          "cumulative_return": {
+            "type": "number",
+            "title": "Cumulative Return"
+          },
+          "annualized_volatility": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Annualized Volatility"
+          },
+          "sharpe_ratio": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sharpe Ratio"
+          },
+          "max_drawdown": {
+            "type": "number",
+            "title": "Max Drawdown"
+          },
+          "final_equity": {
+            "type": "number",
+            "title": "Final Equity"
+          },
+          "total_costs": {
+            "type": "number",
+            "title": "Total Costs"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "cumulative_return",
+          "annualized_volatility",
+          "sharpe_ratio",
+          "max_drawdown",
+          "final_equity",
+          "total_costs"
+        ],
+        "title": "Metrics"
+      },
+      "ModelInfo": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "algorithm": {
+            "type": "string",
+            "enum": [
+              "ppo",
+              "ddpg"
+            ],
+            "title": "Algorithm"
+          },
+          "dataset_id": {
+            "type": "string",
+            "title": "Dataset Id"
+          },
+          "seed": {
+            "type": "integer",
+            "title": "Seed"
+          },
+          "timesteps": {
+            "type": "integer",
+            "title": "Timesteps"
+          },
+          "training_end": {
+            "type": "string",
+            "title": "Training End"
+          },
+          "lookback": {
+            "type": "integer",
+            "title": "Lookback"
+          },
+          "initial_capital": {
+            "type": "number",
+            "title": "Initial Capital"
+          },
+          "transaction_cost_bps": {
+            "type": "number",
+            "title": "Transaction Cost Bps"
+          },
+          "risk_free_rate": {
+            "type": "number",
+            "title": "Risk Free Rate"
+          },
+          "validation_metrics": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Validation Metrics"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "algorithm",
+          "dataset_id",
+          "seed",
+          "timesteps",
+          "training_end",
+          "lookback",
+          "initial_capital",
+          "transaction_cost_bps",
+          "risk_free_rate"
+        ],
+        "title": "ModelInfo"
+      },
+      "ModelList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ModelInfo"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "ModelList"
+      },
+      "PPOSettings": {
+        "properties": {
+          "learning_rate": {
+            "type": "number",
+            "maximum": 0.01,
+            "exclusiveMinimum": 0.0,
+            "title": "Learning Rate",
+            "default": 0.0003
+          },
+          "n_steps": {
+            "type": "integer",
+            "maximum": 2048.0,
+            "minimum": 16.0,
+            "title": "N Steps",
+            "default": 256
+          },
+          "batch_size": {
+            "type": "integer",
+            "maximum": 512.0,
+            "minimum": 8.0,
+            "title": "Batch Size",
+            "default": 64
+          },
+          "n_epochs": {
+            "type": "integer",
+            "maximum": 20.0,
+            "minimum": 1.0,
+            "title": "N Epochs",
+            "default": 5
+          },
+          "gamma": {
+            "type": "number",
+            "maximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Gamma",
+            "default": 0.99
+          },
+          "gae_lambda": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Gae Lambda",
+            "default": 0.95
+          },
+          "clip_range": {
+            "type": "number",
+            "maximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Clip Range",
+            "default": 0.2
+          },
+          "ent_coef": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Ent Coef",
+            "default": 0
+          },
+          "vf_coef": {
+            "type": "number",
+            "maximum": 2.0,
+            "minimum": 0.0,
+            "title": "Vf Coef",
+            "default": 0.5
+          },
+          "max_grad_norm": {
+            "type": "number",
+            "maximum": 10.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Max Grad Norm",
+            "default": 0.5
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "PPOSettings"
+      },
+      "ProviderTrace": {
+        "properties": {
+          "provider": {
+            "type": "string",
+            "enum": [
+              "openrouter",
+              "mock"
+            ],
+            "title": "Provider"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model"
+          },
+          "endpoint_provider": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Endpoint Provider"
+          },
+          "stage": {
+            "type": "string",
+            "title": "Stage"
+          },
+          "attempts": {
+            "type": "integer",
+            "title": "Attempts"
+          },
+          "prompt_tokens": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Prompt Tokens"
+          },
+          "completion_tokens": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Completion Tokens"
+          },
+          "total_tokens": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Tokens"
+          },
+          "elapsed_ms": {
+            "type": "integer",
+            "title": "Elapsed Ms"
+          },
+          "config": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Config"
+          },
+          "request_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Request Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "provider",
+          "model",
+          "stage",
+          "attempts",
+          "elapsed_ms"
+        ],
+        "title": "ProviderTrace"
+      },
+      "Ready": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "const": "ready",
+            "title": "Status",
+            "default": "ready"
+          },
+          "mode": {
+            "type": "string",
+            "const": "PAPER",
+            "title": "Mode",
+            "default": "PAPER"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "Ready"
+      },
+      "RecordedEvent": {
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "title": "Sequence"
+          },
+          "recorded_at": {
+            "type": "string",
+            "title": "Recorded At"
+          },
+          "event": {
+            "$ref": "#/components/schemas/DeskEvent"
+          }
+        },
+        "type": "object",
+        "required": [
+          "sequence",
+          "recorded_at",
+          "event"
+        ],
+        "title": "RecordedEvent"
+      },
+      "Result": {
+        "properties": {
+          "metrics": {
+            "$ref": "#/components/schemas/Metrics"
+          },
+          "equity": {
+            "items": {
+              "$ref": "#/components/schemas/EquityPoint"
+            },
+            "type": "array",
+            "title": "Equity"
+          },
+          "allocations": {
+            "items": {
+              "$ref": "#/components/schemas/Allocation"
+            },
+            "type": "array",
+            "title": "Allocations"
+          },
+          "audit": {
+            "items": {
+              "$ref": "#/components/schemas/AuditEvent"
+            },
+            "type": "array",
+            "title": "Audit"
+          },
+          "manifest": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Manifest"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "metrics",
+          "equity",
+          "allocations",
+          "audit",
+          "manifest"
+        ],
+        "title": "Result"
+      },
+      "RiskReport": {
+        "properties": {
+          "passed": {
+            "type": "boolean",
+            "title": "Passed"
+          },
+          "gates": {
+            "items": {
+              "$ref": "#/components/schemas/Gate"
+            },
+            "type": "array",
+            "title": "Gates"
+          },
+          "policy_version": {
+            "type": "string",
+            "title": "Policy Version",
+            "default": "desk-cash-v1"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "passed",
+          "gates"
+        ],
+        "title": "RiskReport"
+      },
+      "TrainingConfig": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Name",
+            "default": "Portfolio RL research"
+          },
+          "algorithm": {
+            "type": "string",
+            "enum": [
+              "ppo",
+              "ddpg"
+            ],
+            "title": "Algorithm"
+          },
+          "dataset_id": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Dataset Id"
+          },
+          "seed": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": 0.0,
+            "title": "Seed",
+            "default": 42
+          },
+          "total_timesteps": {
+            "type": "integer",
+            "maximum": 262144.0,
+            "minimum": 32.0,
+            "title": "Total Timesteps",
+            "default": 1024
+          },
+          "lookback": {
+            "type": "integer",
+            "maximum": 120.0,
+            "minimum": 2.0,
+            "title": "Lookback",
+            "default": 60
+          },
+          "initial_capital": {
+            "type": "number",
+            "maximum": 1000000000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Initial Capital",
+            "default": 10000
+          },
+          "transaction_cost_bps": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Transaction Cost Bps",
+            "default": 10
+          },
+          "risk_free_rate": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": -0.99,
+            "title": "Risk Free Rate",
+            "default": 0
+          },
+          "reward_mode": {
+            "type": "string",
+            "enum": [
+              "log_return",
+              "simple_return"
+            ],
+            "title": "Reward Mode",
+            "default": "log_return"
+          },
+          "risk_penalty": {
+            "type": "number",
+            "maximum": 1000.0,
+            "minimum": 0.0,
+            "title": "Risk Penalty",
+            "default": 0
+          },
+          "normalize_observations": {
+            "type": "boolean",
+            "title": "Normalize Observations",
+            "default": true
+          },
+          "net_arch": {
+            "items": {
+              "type": "integer",
+              "maximum": 256.0,
+              "minimum": 8.0
+            },
+            "type": "array",
+            "maxItems": 3,
+            "minItems": 1,
+            "title": "Net Arch"
+          },
+          "checkpoint_frequency": {
+            "type": "integer",
+            "maximum": 100000.0,
+            "minimum": 32.0,
+            "title": "Checkpoint Frequency",
+            "default": 1024
+          },
+          "max_seconds": {
+            "type": "integer",
+            "maximum": 7200.0,
+            "minimum": 5.0,
+            "title": "Max Seconds",
+            "default": 600
+          },
+          "max_memory_mb": {
+            "type": "integer",
+            "maximum": 4096.0,
+            "minimum": 512.0,
+            "title": "Max Memory Mb",
+            "default": 2048
+          },
+          "training_end": {
+            "type": "string",
+            "title": "Training End",
+            "default": "2021-12-31"
+          },
+          "ppo": {
+            "$ref": "#/components/schemas/PPOSettings"
+          },
+          "ddpg": {
+            "$ref": "#/components/schemas/DDPGSettings"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "algorithm",
+          "dataset_id"
+        ],
+        "title": "TrainingConfig"
+      },
+      "TrainingJob": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "running",
+              "completed",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Status"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          },
+          "config": {
+            "$ref": "#/components/schemas/TrainingConfig"
+          },
+          "dataset": {
+            "$ref": "#/components/schemas/Dataset"
+          },
+          "progress": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Progress"
+          },
+          "manifest": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Manifest"
+          },
+          "evaluation": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Evaluation"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "cancel_requested": {
+            "type": "boolean",
+            "title": "Cancel Requested",
+            "default": false
+          },
+          "resume_from_job_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Resume From Job Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "status",
+          "created_at",
+          "config",
+          "dataset"
+        ],
+        "title": "TrainingJob"
+      },
+      "TrainingJobList": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/TrainingJob"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "TrainingJobList"
+      },
+      "TrainingRequest": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Name",
+            "default": "Portfolio RL research"
+          },
+          "algorithm": {
+            "type": "string",
+            "enum": [
+              "ppo",
+              "ddpg"
+            ],
+            "title": "Algorithm"
+          },
+          "dataset_id": {
+            "type": "string",
+            "pattern": "^historical-[a-f0-9]{12,64}$",
+            "title": "Dataset Id"
+          },
+          "seed": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": 0.0,
+            "title": "Seed",
+            "default": 42
+          },
+          "total_timesteps": {
+            "type": "integer",
+            "maximum": 262144.0,
+            "minimum": 32.0,
+            "title": "Total Timesteps",
+            "default": 1024
+          },
+          "lookback": {
+            "type": "integer",
+            "maximum": 120.0,
+            "minimum": 2.0,
+            "title": "Lookback",
+            "default": 60
+          },
+          "initial_capital": {
+            "type": "number",
+            "maximum": 1000000000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Initial Capital",
+            "default": 10000
+          },
+          "transaction_cost_bps": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Transaction Cost Bps",
+            "default": 10
+          },
+          "risk_free_rate": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": -0.99,
+            "title": "Risk Free Rate",
+            "default": 0
+          },
+          "reward_mode": {
+            "type": "string",
+            "enum": [
+              "log_return",
+              "simple_return"
+            ],
+            "title": "Reward Mode",
+            "default": "log_return"
+          },
+          "risk_penalty": {
+            "type": "number",
+            "maximum": 1000.0,
+            "minimum": 0.0,
+            "title": "Risk Penalty",
+            "default": 0
+          },
+          "normalize_observations": {
+            "type": "boolean",
+            "title": "Normalize Observations",
+            "default": true
+          },
+          "net_arch": {
+            "items": {
+              "type": "integer",
+              "maximum": 256.0,
+              "minimum": 8.0
+            },
+            "type": "array",
+            "maxItems": 3,
+            "minItems": 1,
+            "title": "Net Arch"
+          },
+          "checkpoint_frequency": {
+            "type": "integer",
+            "maximum": 100000.0,
+            "minimum": 32.0,
+            "title": "Checkpoint Frequency",
+            "default": 1024
+          },
+          "max_seconds": {
+            "type": "integer",
+            "maximum": 7200.0,
+            "minimum": 5.0,
+            "title": "Max Seconds",
+            "default": 600
+          },
+          "max_memory_mb": {
+            "type": "integer",
+            "maximum": 4096.0,
+            "minimum": 512.0,
+            "title": "Max Memory Mb",
+            "default": 2048
+          },
+          "training_end": {
+            "type": "string",
+            "title": "Training End",
+            "default": "2021-12-31"
+          },
+          "ppo": {
+            "$ref": "#/components/schemas/PPOSettings"
+          },
+          "ddpg": {
+            "$ref": "#/components/schemas/DDPGSettings"
+          },
+          "resume_from_job_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-f0-9-]{36}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Resume From Job Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "algorithm",
+          "dataset_id"
+        ],
+        "title": "TrainingRequest"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

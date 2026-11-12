@@ -1,0 +1,458 @@
+{
+  "browser": "Chromium",
+  "build": "production",
+  "case_count": 1,
+  "viewport_widths": [
+    1440,
+    768,
+    390
+  ],
+  "data_kind": "HISTORICAL",
+  "inference": "explicit_mock",
+  "holdout_2024_used": false,
+  "holdout_post_http_status": 422,
+  "database": ".runtime\\e2e-agent-desk-6603e71e-ca0a-4ceb-ae8b-ac25323abecb\\portfolio.sqlite3",
+  "runs": [
+    {
+      "id": "01925027-31f5-4b62-9a20-9220d93b566b",
+      "status": "completed",
+      "mode": "PAPER",
+      "scope": "llm_exploratory_historical",
+      "created_at": "2026-11-11T16:44:52.743841Z",
+      "finished_at": "2026-11-11T16:44:55.328399Z",
+      "request": {
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "decision_date": "2023-12-29",
+        "strategy": "equal_weight",
+        "model_id": null
+      },
+      "provider": {
+        "enabled": true,
+        "provider": "mock",
+        "model": "mock/agent-desk",
+        "endpoint_provider": null,
+        "code": "configured"
+      },
+      "outcome": {
+        "decision": "approved",
+        "code": "judge_approve",
+        "dossier": {
+          "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+          "dataset_sha256": "bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+          "decision_date": "2023-12-29",
+          "information_date": "2023-12-29",
+          "assets": [
+            "AAPL",
+            "MSFT",
+            "JPM",
+            "JNJ",
+            "XOM",
+            "PG",
+            "KO",
+            "WMT",
+            "SPY",
+            "GLD"
+          ],
+          "observations": 61,
+          "lookback": 60,
+          "market_return": 0.07252955944731831,
+          "market_volatility": 0.08459804082437458
+        },
+        "analysis": {
+          "trend": "up",
+          "regime": "low",
+          "evidence": [
+            "market_return",
+            "market_volatility"
+          ]
+        },
+        "candidate": {
+          "strategy": "equal_weight",
+          "model_id": null,
+          "weights": {
+            "AAPL": 0.1,
+            "MSFT": 0.1,
+            "JPM": 0.1,
+            "JNJ": 0.1,
+            "XOM": 0.1,
+            "PG": 0.1,
+            "KO": 0.1,
+            "WMT": 0.1,
+            "SPY": 0.1,
+            "GLD": 0.1
+          },
+          "annualized_volatility": 0.08459804082437458,
+          "turnover": 1.0,
+          "fee_bps": 10.0,
+          "optimizer_fallback": false
+        },
+        "judgment": {
+          "verdict": "approve",
+          "reason": "aligned",
+          "evidence": [
+            "weights",
+            "portfolio_volatility"
+          ]
+        },
+        "risk": {
+          "passed": true,
+          "gates": [
+            {
+              "name": "snapshot",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": null,
+              "threshold": null,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "chronology",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": "2023-12-29",
+              "threshold": "Same XNYS close in 2022\u20132023",
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "dossier_universe",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": null,
+              "threshold": null,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "coverage",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 61.0,
+              "threshold": "lookback + 1 closes; 2\u2013120 returns",
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "market_return",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 0.07252955944731831,
+              "threshold": "finite and greater than \u22121",
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "market_volatility",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 0.08459804082437458,
+              "threshold": "finite and nonnegative",
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "provider",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": null,
+              "threshold": null,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "strategy",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": null,
+              "threshold": null,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "proposal_universe",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": null,
+              "threshold": null,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "long_only",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": null,
+              "threshold": "Each weight in [0, 1]",
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "full_investment",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 1.0,
+              "threshold": 1.0,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "position_limit",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 0.1,
+              "threshold": 0.35,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "portfolio_volatility",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 0.08459804082437458,
+              "threshold": 0.3,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "cash_turnover",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 1.0,
+              "threshold": 1.0,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "fee_assumption",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 10.0,
+              "threshold": 10.0,
+              "decision_date": "2023-12-29"
+            }
+          ],
+          "policy_version": "desk-cash-v1"
+        }
+      },
+      "events": [],
+      "event_codes": [
+        "dossier_verified",
+        "analysis_validated",
+        "candidate_computed",
+        "judge_approve",
+        "risk_passed",
+        "judge_approve"
+      ]
+    },
+    {
+      "id": "3dff1a20-81fa-4d4f-bb23-6b1302e81c7a",
+      "status": "blocked",
+      "mode": "PAPER",
+      "scope": "llm_exploratory_historical",
+      "created_at": "2026-11-11T16:44:56.504233Z",
+      "finished_at": "2026-11-11T16:44:56.977987Z",
+      "request": {
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "decision_date": "2023-12-29",
+        "strategy": "markowitz",
+        "model_id": null
+      },
+      "provider": {
+        "enabled": true,
+        "provider": "mock",
+        "model": "mock/agent-desk",
+        "endpoint_provider": null,
+        "code": "configured"
+      },
+      "outcome": {
+        "decision": "blocked",
+        "code": "risk_veto",
+        "dossier": {
+          "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+          "dataset_sha256": "bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+          "decision_date": "2023-12-29",
+          "information_date": "2023-12-29",
+          "assets": [
+            "AAPL",
+            "MSFT",
+            "JPM",
+            "JNJ",
+            "XOM",
+            "PG",
+            "KO",
+            "WMT",
+            "SPY",
+            "GLD"
+          ],
+          "observations": 61,
+          "lookback": 60,
+          "market_return": 0.07252955944731831,
+          "market_volatility": 0.08459804082437458
+        },
+        "analysis": {
+          "trend": "up",
+          "regime": "low",
+          "evidence": [
+            "market_return",
+            "market_volatility"
+          ]
+        },
+        "candidate": {
+          "strategy": "markowitz",
+          "model_id": null,
+          "weights": {
+            "AAPL": 0.0,
+            "MSFT": 0.18892255269786207,
+            "JPM": 0.8110774473021365,
+            "JNJ": 2.926984814501052e-16,
+            "XOM": 3.5121382814024557e-16,
+            "PG": 3.554002136713963e-17,
+            "KO": 5.370163600370338e-16,
+            "WMT": 2.737578752435947e-16,
+            "SPY": 0.0,
+            "GLD": 0.0
+          },
+          "annualized_volatility": 0.1292552232217657,
+          "turnover": 1.0,
+          "fee_bps": 10.0,
+          "optimizer_fallback": false
+        },
+        "judgment": {
+          "verdict": "approve",
+          "reason": "aligned",
+          "evidence": [
+            "weights",
+            "portfolio_volatility"
+          ]
+        },
+        "risk": {
+          "passed": false,
+          "gates": [
+            {
+              "name": "snapshot",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": null,
+              "threshold": null,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "chronology",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": "2023-12-29",
+              "threshold": "Same XNYS close in 2022\u20132023",
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "dossier_universe",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": null,
+              "threshold": null,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "coverage",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 61.0,
+              "threshold": "lookback + 1 closes; 2\u2013120 returns",
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "market_return",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 0.07252955944731831,
+              "threshold": "finite and greater than \u22121",
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "market_volatility",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 0.08459804082437458,
+              "threshold": "finite and nonnegative",
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "provider",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": null,
+              "threshold": null,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "strategy",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": null,
+              "threshold": null,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "proposal_universe",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": null,
+              "threshold": null,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "long_only",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": null,
+              "threshold": "Each weight in [0, 1]",
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "full_investment",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 1.0,
+              "threshold": 1.0,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "position_limit",
+              "passed": false,
+              "reason_code": "position_limit_exceeded",
+              "observed": 0.8110774473021365,
+              "threshold": 0.35,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "portfolio_volatility",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 0.1292552232217657,
+              "threshold": 0.3,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "cash_turnover",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 1.0,
+              "threshold": 1.0,
+              "decision_date": "2023-12-29"
+            },
+            {
+              "name": "fee_assumption",
+              "passed": true,
+              "reason_code": "ok",
+              "observed": 10.0,
+              "threshold": 10.0,
+              "decision_date": "2023-12-29"
+            }
+          ],
+          "policy_version": "desk-cash-v1"
+        }
+      },
+      "events": [],
+      "event_codes": [
+        "dossier_verified",
+        "analysis_validated",
+        "candidate_computed",
+        "judge_approve",
+        "risk_veto",
+        "risk_veto"
+      ]
+    }
+  ],
+  "screenshots": {
+    "agent-desk-1440.png": "ac4b91bdf5ed889b549b444de7366c748f066d3c76fe95623ab76e2d50f97127",
+    "agent-desk-390.png": "de84928848a8058affa30df33ed46ed37405c95efdda2df34311d0e833d2fa64",
+    "agent-desk-768.png": "5d9d09ddabaccad3165b465735db0f82f2e7648fd929e7c706b8249945645bac"
+  }
+}

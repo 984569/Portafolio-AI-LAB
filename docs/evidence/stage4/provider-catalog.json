@@ -1,0 +1,239 @@
+{
+  "checked_at_utc": "2026-11-11T16:34:15.710137+00:00",
+  "authentication_used": false,
+  "completion_requests_sent": 0,
+  "public_catalog": {
+    "url": "https://openrouter.ai/api/v1/models",
+    "http_status": 200,
+    "response_date": "Wed, 11 Nov 2026 16:34:16 GMT",
+    "body_sha256": "3a36cfe411401a0620b1776af685e8e430d86a44e6a80b0092b44408ab744fd1"
+  },
+  "models": [
+    {
+      "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "catalog_pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "catalog_supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "seed",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "endpoint_source": {
+        "url": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-ultra-550b-a55b:free/endpoints",
+        "http_status": 200,
+        "response_date": "Wed, 11 Nov 2026 16:34:17 GMT",
+        "body_sha256": "cad6502713dc13acbb80943bbdd8c71a52ce29c65dbf2a8491ad01ebea88f4de"
+      },
+      "endpoints": [
+        {
+          "tag": "nvidia",
+          "name": "Nvidia | nvidia/nemotron-3-ultra-550b-a55b-20260604:free",
+          "provider_name": "Nvidia",
+          "model_id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "discount": 0
+          },
+          "status": 0,
+          "context_length": 1000000,
+          "max_completion_tokens": 65536,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "temperature",
+            "max_tokens",
+            "seed",
+            "top_p",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "advertises_required_parameters": false
+        }
+      ]
+    },
+    {
+      "id": "liquid/lfm-3-1.7b:free",
+      "catalog_pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "catalog_supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logprobs",
+        "max_completion_tokens",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "endpoint_source": {
+        "url": "https://openrouter.ai/api/v1/models/liquid/lfm-3-1.7b:free/endpoints",
+        "http_status": 200,
+        "response_date": "Wed, 11 Nov 2026 16:34:17 GMT",
+        "body_sha256": "d833322e9b01e5c7d21e01423c1d73865d0591d809dd9d755b7e82bd14f9a42f"
+      },
+      "endpoints": [
+        {
+          "tag": "liquid/fp8",
+          "name": "Liquid | liquid/lfm-3-1.7b-20261106:free",
+          "provider_name": "Liquid",
+          "model_id": "liquid/lfm-3-1.7b:free",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "discount": 0
+          },
+          "status": 0,
+          "context_length": 262144,
+          "max_completion_tokens": 8192,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "seed",
+            "top_k",
+            "min_p",
+            "repetition_penalty",
+            "tools",
+            "tool_choice",
+            "response_format",
+            "structured_outputs",
+            "logprobs",
+            "top_logprobs",
+            "max_completion_tokens"
+          ],
+          "advertises_required_parameters": true
+        }
+      ]
+    },
+    {
+      "id": "liquid/lfm-2.5-2.6b:free",
+      "catalog_pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "catalog_supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logprobs",
+        "max_completion_tokens",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "endpoint_source": {
+        "url": "https://openrouter.ai/api/v1/models/liquid/lfm-2.5-2.6b:free/endpoints",
+        "http_status": 200,
+        "response_date": "Wed, 11 Nov 2026 16:34:18 GMT",
+        "body_sha256": "14b0f6585a91be0b8c4f7953c1493de2b7d47a482e1ce1a9f675e164951efca6"
+      },
+      "endpoints": [
+        {
+          "tag": "liquid/fp8",
+          "name": "Liquid | liquid/lfm-2.5-2.6b-20260811:free",
+          "provider_name": "Liquid",
+          "model_id": "liquid/lfm-2.5-2.6b:free",
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "discount": 0
+          },
+          "status": 0,
+          "context_length": 65536,
+          "max_completion_tokens": 8192,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "seed",
+            "top_k",
+            "min_p",
+            "repetition_penalty",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "logprobs",
+            "top_logprobs",
+            "max_completion_tokens"
+          ],
+          "advertises_required_parameters": true
+        }
+      ]
+    }
+  ],
+  "recommended_configuration": {
+    "model": "liquid/lfm-3-1.7b:free",
+    "endpoint_provider": "liquid/fp8"
+  },
+  "limitations": "Metadata advertises the required capabilities. Inference, quota and schema enforcement at the actual provider have not been tested with an authenticated request.",
+  "documentation": [
+    "https://openrouter.ai/docs/guides/features/structured-outputs",
+    "https://openrouter.ai/docs/guides/routing/provider-selection",
+    "https://openrouter.ai/docs/guides/features/plugins/overview"
+  ],
+  "adapter_public_preflight": {
+    "checked_at_utc": "2026-11-11T16:38:32.044399+00:00",
+    "results": [
+      {
+        "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "endpoint_provider": "nvidia",
+        "result": "provider_capability"
+      },
+      {
+        "model": "liquid/lfm-3-1.7b:free",
+        "endpoint_provider": "liquid/fp8",
+        "result": "passed"
+      },
+      {
+        "model": "liquid/lfm-2.5-2.6b:free",
+        "endpoint_provider": "liquid/fp8",
+        "result": "passed"
+      }
+    ]
+  }
+}

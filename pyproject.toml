@@ -1,0 +1,42 @@
+[project]
+name = "portfolio-ai-lab"
+version = "0.1.0"
+description = "Paper-only portfolio research platform"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "pydantic>=2.10,<3",
+  "numpy>=1.26,<3", "pandas>=2.2,<4", "scipy>=1.14,<2",
+  "pyarrow>=18,<25", "exchange-calendars>=4.8,<5", "yfinance>=0.2.66,<2",
+  "gymnasium>=1.0,<2", "stable-baselines3>=2.7,<3", "torch>=2.3,<3",
+  "psutil>=6,<8", "httpx>=0.28,<1",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1", "mypy>=1.15,<2", "pandas-stubs"]
+
+[tool.pytest.ini_options]
+pythonpath = ["apps/api", "packages"]
+testpaths = ["tests/quant", "tests/api", "tests/core", "tests/data", "tests/research", "tests/environment", "tests/rl", "tests/evaluation", "tests/agent_desk"]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[tool.mypy]
+python_version = "3.11"
+mypy_path = "packages"
+ignore_missing_imports = true
+check_untyped_defs = true
+disallow_untyped_defs = true
+files = ["packages/portfolio_core", "packages/market_data", "packages/portfolio_research", "packages/portfolio_env", "packages/portfolio_rl", "packages/portfolio_evaluation", "packages/agent_desk"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

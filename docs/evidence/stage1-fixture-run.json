@@ -1,0 +1,538 @@
+{
+  "id": "e80566ad-8182-41d9-b645-c400a2d90a92",
+  "name": "Browser visual fixture",
+  "status": "completed",
+  "created_at": "2026-11-10T04:44:46.970841Z",
+  "completed_at": "2026-11-10T04:44:47.055354Z",
+  "config": {
+    "name": "Browser visual fixture",
+    "strategy": "equal_weight",
+    "dataset_id": "fixture-v1",
+    "initial_capital": 10000.0,
+    "transaction_cost_bps": 10.0,
+    "risk_free_rate": 0.0,
+    "seed": 42
+  },
+  "dataset": {
+    "id": "fixture-v1",
+    "kind": "FIXTURE",
+    "source": "Versioned synthetic prices; fictional assets; no exchange calendar or real data",
+    "sha256": "b6fed50dcf0ffb19c3ba0dd257f139fbc72ccdace0ed7cddedeb679959dbbc91",
+    "assets": [
+      "FICT_A",
+      "FICT_B",
+      "FICT_C",
+      "FICT_D",
+      "FICT_E",
+      "FICT_F",
+      "FICT_G",
+      "FICT_H",
+      "FICT_I",
+      "FICT_J"
+    ],
+    "start_date": "2020-01-02",
+    "end_date": "2020-01-29",
+    "observations": 20
+  },
+  "result": {
+    "metrics": {
+      "cumulative_return": 0.08002401242017143,
+      "annualized_volatility": 0.11867002204781052,
+      "sharpe_ratio": 8.677860421198003,
+      "max_drawdown": 0.01517197021366662,
+      "final_equity": 10800.240124201715,
+      "total_costs": 11.959282449031448
+    },
+    "equity": [
+      {
+        "date": "2020-01-02",
+        "equity": 10000.0,
+        "net_return": 0.0
+      },
+      {
+        "date": "2020-01-03",
+        "equity": 10039.95,
+        "net_return": 0.003994999999999971
+      },
+      {
+        "date": "2020-01-06",
+        "equity": 10060.502515148133,
+        "net_return": 0.0020470734563551307
+      },
+      {
+        "date": "2020-01-07",
+        "equity": 10111.589332219946,
+        "net_return": 0.005077958779384106
+      },
+      {
+        "date": "2020-01-08",
+        "equity": 10192.353538690051,
+        "net_return": 0.007987291000115526
+      },
+      {
+        "date": "2020-01-09",
+        "equity": 10242.698847856196,
+        "net_return": 0.00493951754862465
+      },
+      {
+        "date": "2020-01-10",
+        "equity": 10283.63134202609,
+        "net_return": 0.003996260631880411
+      },
+      {
+        "date": "2020-01-13",
+        "equity": 10143.600425473976,
+        "net_return": -0.013616874418655
+      },
+      {
+        "date": "2020-01-14",
+        "equity": 10293.040985176942,
+        "net_return": 0.014732496690984531
+      },
+      {
+        "date": "2020-01-15",
+        "equity": 10354.811941292748,
+        "net_return": 0.00600123483475512
+      },
+      {
+        "date": "2020-01-16",
+        "equity": 10434.725485421837,
+        "net_return": 0.007717527327600449
+      },
+      {
+        "date": "2020-01-17",
+        "equity": 10456.232230704767,
+        "net_return": 0.0020610743725819614
+      },
+      {
+        "date": "2020-01-20",
+        "equity": 10556.82379138352,
+        "net_return": 0.0096202492885884
+      },
+      {
+        "date": "2020-01-21",
+        "equity": 10567.416705442996,
+        "net_return": 0.001003418667281597
+      },
+      {
+        "date": "2020-01-22",
+        "equity": 10407.088173952612,
+        "net_return": -0.015171970213666675
+      },
+      {
+        "date": "2020-01-23",
+        "equity": 10546.588507937604,
+        "net_return": 0.013404357842776937
+      },
+      {
+        "date": "2020-01-24",
+        "equity": 10648.431234162306,
+        "net_return": 0.009656461532376426
+      },
+      {
+        "date": "2020-01-27",
+        "equity": 10678.534354835168,
+        "net_return": 0.0028270005234465323
+      },
+      {
+        "date": "2020-01-28",
+        "equity": 10729.819711500682,
+        "net_return": 0.004802658769580415
+      },
+      {
+        "date": "2020-01-29",
+        "equity": 10800.240124201715,
+        "net_return": 0.006563056472006945
+      }
+    ],
+    "allocations": [
+      {
+        "date": "2020-01-02",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 1.0,
+        "cost": 10.0
+      },
+      {
+        "date": "2020-01-03",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.01293532338308459,
+        "cost": 0.12987000000000015
+      },
+      {
+        "date": "2020-01-06",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.011526814581712674,
+        "cost": 0.11596554709096654
+      },
+      {
+        "date": "2020-01-07",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.011854814027537922,
+        "cost": 0.11987101105630382
+      },
+      {
+        "date": "2020-01-08",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.010559357007800765,
+        "cost": 0.10762469976474973
+      },
+      {
+        "date": "2020-01-09",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.011707954283980498,
+        "cost": 0.11992104985528007
+      },
+      {
+        "date": "2020-01-10",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.01364450448803567,
+        "cost": 0.14031505399957928
+      },
+      {
+        "date": "2020-01-13",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.004716135900372051,
+        "cost": 0.047838598125607035
+      },
+      {
+        "date": "2020-01-14",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.004726247906618658,
+        "cost": 0.04864746340893257
+      },
+      {
+        "date": "2020-01-15",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.012386775584541168,
+        "cost": 0.12826273173692035
+      },
+      {
+        "date": "2020-01-16",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.010346649351976586,
+        "cost": 0.10796444568179343
+      },
+      {
+        "date": "2020-01-17",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.013850354701267581,
+        "cost": 0.14482252523408737
+      },
+      {
+        "date": "2020-01-20",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.011349542520915898,
+        "cost": 0.11981512050612385
+      },
+      {
+        "date": "2020-01-21",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.012527457526431501,
+        "cost": 0.13238286394153984
+      },
+      {
+        "date": "2020-01-22",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.0046686084081719315,
+        "cost": 0.048586619353501836
+      },
+      {
+        "date": "2020-01-23",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.004416356901637775,
+        "cost": 0.04657749894576388
+      },
+      {
+        "date": "2020-01-24",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.011305584222652154,
+        "cost": 0.12038673615694177
+      },
+      {
+        "date": "2020-01-27",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.012168897134980136,
+        "cost": 0.12994598611634064
+      },
+      {
+        "date": "2020-01-28",
+        "weights": {
+          "FICT_A": 0.1,
+          "FICT_B": 0.1,
+          "FICT_C": 0.1,
+          "FICT_D": 0.1,
+          "FICT_E": 0.1,
+          "FICT_F": 0.1,
+          "FICT_G": 0.1,
+          "FICT_H": 0.1,
+          "FICT_I": 0.1,
+          "FICT_J": 0.1
+        },
+        "turnover": 0.014024885981608809,
+        "cost": 0.1504844980570158
+      }
+    ],
+    "audit": [
+      {
+        "date": "2020-01-02",
+        "event": "fixture_validated",
+        "detail": "FIXTURE: 10 fictional assets. Synthetic prices, not market observations."
+      },
+      {
+        "date": "2020-01-02",
+        "event": "cost_model",
+        "detail": "Approximate fee=equity*bps/10000*L1(target-drift); entry turnover=1; entry charged in first interval; no terminal liquidation fee."
+      },
+      {
+        "date": "2020-01-29",
+        "event": "completed",
+        "detail": "Deterministic exogenous equal-weight calculation; PAPER ONLY. Fixture output is not academic validation or investment performance."
+      }
+    ],
+    "manifest": {
+      "engine_version": "0.1.0",
+      "fixture_sha256": "b6fed50dcf0ffb19c3ba0dd257f139fbc72ccdace0ed7cddedeb679959dbbc91",
+      "dataset_id": "fixture-v1",
+      "data_mode": "FIXTURE",
+      "mode": "PAPER",
+      "configuration": {
+        "name": "Browser visual fixture",
+        "strategy": "equal_weight",
+        "dataset_id": "fixture-v1",
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "seed": 42
+      },
+      "python_version": "3.11.9",
+      "timing_convention": {
+        "target_information": "Exogenous equal weights fixed before all observations",
+        "execution": "Stylized rebalance at close t; costs then t-to-t+1 price relatives",
+        "equity": "Initial pre-fee cash then interval end valuations",
+        "fees": "Approximate pretrade equity times one-way L1 turnover; initial turnover 1",
+        "terminal_liquidation": false,
+        "future_signals": "Close-derived policies require a separately frozen lag protocol"
+      },
+      "metric_definitions": {
+        "annualization_factor": 252,
+        "volatility_ddof": 1,
+        "risk_free": "daily_rf=expm1(log1p(annual_effective_rf)/252)",
+        "returns": "net of fees; excludes initial zero-return curve point",
+        "sharpe_ratio": "mean(daily_net_return-daily_rf)/sample_std*sqrt(252)",
+        "undefined_metrics": "null: volatility with <2 returns; Sharpe also with zero std",
+        "max_drawdown": "nonnegative magnitude relative to running equity peak including cash",
+        "total_costs": "sum of simulated monetary fees, without compounding"
+      },
+      "seed_usage": "Recorded for reproducibility; equal_weight contains no random draws",
+      "runtime": {
+        "git_commit": null,
+        "git_dirty": true,
+        "recorded_at": "2026-11-10T04:44:46.986382Z",
+        "dependency_versions": {
+          "fastapi": "0.162.2",
+          "pydantic": "2.14.3"
+        },
+        "git_reason": "No readable HEAD commit."
+      }
+    }
+  },
+  "error": null
+}

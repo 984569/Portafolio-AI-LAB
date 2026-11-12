@@ -1,0 +1,3476 @@
+{
+  "status": "completed",
+  "protocol_sha256": "f9a40f741a4e6f1b78cc0fe378ab0ce9e76e636a729264c8ee571e60f844d8eb",
+  "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+  "dataset_sha256": "bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+  "holdout_2024_evaluated": false,
+  "preflight": {
+    "estimated_final_training_seconds_conservative": 1175.8079998791218,
+    "walk_forward_models": 8,
+    "final_models": 6,
+    "estimated_artifact_disk_mb_upper": 2048,
+    "cpu_threads_per_child": 1,
+    "concurrent_children": 1
+  },
+  "selection": {
+    "ppo": {
+      "status": "selected",
+      "selected_candidate": "0.0001",
+      "algorithm": "ppo",
+      "development_seed": 42,
+      "selection_metric": "mean_predeclared_fold_sharpe",
+      "scores": [
+        {
+          "candidate_id": "0.0001",
+          "fold_scores": {
+            "wf_2019": 2.4067552417022586,
+            "wf_2021": 1.8294437935998338
+          },
+          "mean_sharpe": 2.1180995176510464
+        },
+        {
+          "candidate_id": "0.0003",
+          "fold_scores": {
+            "wf_2019": 1.4522647546109055,
+            "wf_2021": 0.7680449692690345
+          },
+          "mean_sharpe": 1.1101548619399702
+        }
+      ],
+      "tie_break": "lexicographic candidate_id",
+      "folds": [
+        {
+          "fold_id": "wf_2019",
+          "train_start": "2015-01-01",
+          "train_end": "2018-12-31",
+          "eval_start": "2019-01-01",
+          "eval_end": "2019-12-31"
+        },
+        {
+          "fold_id": "wf_2021",
+          "train_start": "2015-01-01",
+          "train_end": "2020-12-31",
+          "eval_start": "2021-01-01",
+          "eval_end": "2021-12-31"
+        }
+      ],
+      "validation_2022_2023_used": false,
+      "holdout_evaluated": false,
+      "limitation": "Small fixed candidate/fold experiment; selected does not mean optimal"
+    },
+    "ddpg": {
+      "status": "selected",
+      "selected_candidate": "0.001",
+      "algorithm": "ddpg",
+      "development_seed": 42,
+      "selection_metric": "mean_predeclared_fold_sharpe",
+      "scores": [
+        {
+          "candidate_id": "0.0003",
+          "fold_scores": {
+            "wf_2019": -0.5528914167072743,
+            "wf_2021": -1.2978361593661911
+          },
+          "mean_sharpe": -0.9253637880367327
+        },
+        {
+          "candidate_id": "0.001",
+          "fold_scores": {
+            "wf_2019": -0.03434532907101682,
+            "wf_2021": -0.7073585391861997
+          },
+          "mean_sharpe": -0.3708519341286083
+        }
+      ],
+      "tie_break": "lexicographic candidate_id",
+      "folds": [
+        {
+          "fold_id": "wf_2019",
+          "train_start": "2015-01-01",
+          "train_end": "2018-12-31",
+          "eval_start": "2019-01-01",
+          "eval_end": "2019-12-31"
+        },
+        {
+          "fold_id": "wf_2021",
+          "train_start": "2015-01-01",
+          "train_end": "2020-12-31",
+          "eval_start": "2021-01-01",
+          "eval_end": "2021-12-31"
+        }
+      ],
+      "validation_2022_2023_used": false,
+      "holdout_evaluated": false,
+      "limitation": "Small fixed candidate/fold experiment; selected does not mean optimal"
+    }
+  },
+  "seed_summaries": {
+    "ppo": {
+      "strategy": "ppo",
+      "n_runs": 3,
+      "seeds": [
+        7,
+        42,
+        123
+      ],
+      "metrics": {
+        "cumulative_return": {
+          "available_count": 3,
+          "mean": -0.13939260550805008,
+          "std": 0.021210295009539526,
+          "min": -0.16272173939414947,
+          "max": -0.12127123993990496
+        },
+        "annualized_return": {
+          "available_count": 3,
+          "mean": -0.07291473793424001,
+          "std": 0.011541605557698694,
+          "min": -0.08562069780498922,
+          "max": -0.06307928808920583
+        },
+        "sharpe_ratio": {
+          "available_count": 3,
+          "mean": -0.4340408422282065,
+          "std": 0.07319903146611807,
+          "min": -0.5164644545143003,
+          "max": -0.37661609955714276
+        },
+        "annualized_volatility": {
+          "available_count": 3,
+          "mean": 0.1487606642297889,
+          "std": 0.003249615947501795,
+          "min": 0.14506721288945895,
+          "max": 0.1511808153124699
+        },
+        "max_drawdown": {
+          "available_count": 3,
+          "mean": 0.22999434133642557,
+          "std": 0.02784282490067859,
+          "min": 0.2052793123549721,
+          "max": 0.26015911292318716
+        },
+        "final_equity": {
+          "available_count": 3,
+          "mean": 8606.073944919499,
+          "std": 212.10295009539539,
+          "min": 8372.782606058505,
+          "max": 8787.28760060095
+        },
+        "total_costs": {
+          "available_count": 3,
+          "mean": 3008.477239519701,
+          "std": 33.66862341720565,
+          "min": 2969.708462647995,
+          "max": 3030.3741282468022
+        },
+        "turnover_total": {
+          "available_count": 3,
+          "mean": 342.37915064428404,
+          "std": 16.427733403514058,
+          "min": 324.95274692993195,
+          "max": 357.5816332755708
+        },
+        "turnover_mean": {
+          "available_count": 3,
+          "mean": 0.6847583012885682,
+          "std": 0.03285546680702823,
+          "min": 0.6499054938598637,
+          "max": 0.7151632665511417
+        }
+      },
+      "all_seeds_reported": true,
+      "best_seed_selected": false,
+      "interpretation": "Seed dispersion conditional on one fixed market period; not market uncertainty"
+    },
+    "ddpg": {
+      "strategy": "ddpg",
+      "n_runs": 3,
+      "seeds": [
+        7,
+        42,
+        123
+      ],
+      "metrics": {
+        "cumulative_return": {
+          "available_count": 3,
+          "mean": -0.42555554039606475,
+          "std": 0.030119042253160422,
+          "min": -0.4598165393197746,
+          "max": -0.4032486840290278
+        },
+        "annualized_return": {
+          "available_count": 3,
+          "mean": -0.2439332754541377,
+          "std": 0.020121563384521014,
+          "min": -0.2668365493767768,
+          "max": -0.22909676836891135
+        },
+        "sharpe_ratio": {
+          "available_count": 3,
+          "mean": -1.6115620410799256,
+          "std": 0.32756064425668274,
+          "min": -1.9811571932719558,
+          "max": -1.3571545283874327
+        },
+        "annualized_volatility": {
+          "available_count": 3,
+          "mean": 0.16694819805441366,
+          "std": 0.0173187120109555,
+          "min": 0.150839096776056,
+          "max": 0.18526483560226395
+        },
+        "max_drawdown": {
+          "available_count": 3,
+          "mean": 0.44384050727368285,
+          "std": 0.026931197036624607,
+          "min": 0.42818123734377955,
+          "max": 0.4749377124334855
+        },
+        "final_equity": {
+          "available_count": 3,
+          "mean": 5744.444596039353,
+          "std": 301.19042253160444,
+          "min": 5401.834606802254,
+          "max": 5967.5131597097225
+        },
+        "total_costs": {
+          "available_count": 3,
+          "mean": 3830.5179309623186,
+          "std": 310.56894059590707,
+          "min": 3604.156911045484,
+          "max": 4184.579289805661
+        },
+        "turnover_total": {
+          "available_count": 3,
+          "mean": 537.941308638518,
+          "std": 50.99319586662252,
+          "min": 503.24108509456823,
+          "max": 596.4888340330938
+        },
+        "turnover_mean": {
+          "available_count": 3,
+          "mean": 1.075882617277036,
+          "std": 0.10198639173324513,
+          "min": 1.0064821701891364,
+          "max": 1.1929776680661877
+        }
+      },
+      "all_seeds_reported": true,
+      "best_seed_selected": false,
+      "interpretation": "Seed dispersion conditional on one fixed market period; not market uncertainty"
+    }
+  },
+  "paired_bootstrap": {
+    "ppo": {
+      "statistic": "annualized_mean_net_return_difference_a_minus_b",
+      "estimate": -0.15643737883852155,
+      "confidence": 0.95,
+      "observations": 500,
+      "block_length": 20,
+      "resamples": 1000,
+      "seed": 42,
+      "status": "computed",
+      "lower": -0.20783365287027272,
+      "upper": -0.10730277267012668,
+      "p_value": null,
+      "holdout_evaluated": false,
+      "limitations": [
+        "Exploratory serial-dependence approximation, not a causal superiority test",
+        "Conditional on these models/seeds and market period; no multiplicity correction",
+        "Not a substitute for protocol-locked2024 final evaluation"
+      ]
+    },
+    "ddpg": {
+      "statistic": "annualized_mean_net_return_difference_a_minus_b",
+      "estimate": -0.32487157071950806,
+      "confidence": 0.95,
+      "observations": 500,
+      "block_length": 20,
+      "resamples": 1000,
+      "seed": 42,
+      "status": "computed",
+      "lower": -0.4567530981812633,
+      "upper": -0.1986244594833704,
+      "p_value": null,
+      "holdout_evaluated": false,
+      "limitations": [
+        "Exploratory serial-dependence approximation, not a causal superiority test",
+        "Conditional on these models/seeds and market period; no multiplicity correction",
+        "Not a substitute for protocol-locked2024 final evaluation"
+      ]
+    }
+  },
+  "raw_report_sha256": "d52e4e8ef6e20af037d548730f34f5cb4e7071dfd2d146c0e693870174f987b3",
+  "resource_measurement": "Peak is max of periodic RSS measurements from the training interpreter. The study supervisor only measured the Windows launcher; its RSS and CPU values are omitted.",
+  "study_jobs": [
+    {
+      "job_id": "15537d98-a3be-41cf-8d71-d4ecca120cc8",
+      "configuration": {
+        "name": "WF ppo 0.0003 wf_2019",
+        "algorithm": "ppo",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 2048,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          64,
+          64
+        ],
+        "checkpoint_frequency": 2048,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2018-12-31",
+        "ppo": {
+          "learning_rate": 0.0003,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 20000,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 2048,
+      "training_seconds": 3.5619999999180436,
+      "files": {
+        "model.zip": "678b2deab10757c5caf4b33152e2f58333dde974902e8e02ef9bfcbd9298a69d",
+        "normalizer.json": "4b630fe917d7fb649dc568565bf005398557849f25be2692938a2ede6db43807"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.0003,
+        "train/entropy_loss": -14.138711977005006,
+        "train/policy_gradient_loss": -0.04587833364494145,
+        "train/value_loss": 0.006060829130001366,
+        "train/approx_kl": 0.009997665882110596,
+        "train/clip_fraction": 0.0453125,
+        "train/loss": -0.0997922495007515,
+        "train/explained_variance": -5.427548408508301,
+        "train/std": 0.9949701428413391,
+        "train/n_updates": 40.0,
+        "train/clip_range": 0.2
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2018-12-31",
+      "normalization_fit_end": "2018-12-31",
+      "child_sampled_peak_rss_mib": 356.1875,
+      "supervised_elapsed_seconds": 11.483999999938533,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00002048",
+          "timesteps": 2048
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "5269dfcecc76225173b000129d9c927ffd55639b1a375d3ba98e4e3ee8bdc522"
+    },
+    {
+      "job_id": "21a2552f-d433-4249-98a2-1f4ef54f2d31",
+      "configuration": {
+        "name": "WF ppo 0.0003 wf_2021",
+        "algorithm": "ppo",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 2048,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          64,
+          64
+        ],
+        "checkpoint_frequency": 2048,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2020-12-31",
+        "ppo": {
+          "learning_rate": 0.0003,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 20000,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 2048,
+      "training_seconds": 3.8600000001024455,
+      "files": {
+        "model.zip": "997dea4628691cd8a1ec85ff175bb6c6c507be1076517cdfeb55422ad8feeb46",
+        "normalizer.json": "84072bff8725c7040f62c5b74feac55d54d124064a67ef4554796649902ecdd9"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.0003,
+        "train/entropy_loss": -14.173279666900635,
+        "train/policy_gradient_loss": -0.043159974925220015,
+        "train/value_loss": 0.011759232822805643,
+        "train/approx_kl": 0.008509996347129345,
+        "train/clip_fraction": 0.0359375,
+        "train/loss": -0.1025480329990387,
+        "train/explained_variance": -36.23244857788086,
+        "train/std": 0.9978753328323364,
+        "train/n_updates": 40.0,
+        "train/clip_range": 0.2
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2020-12-31",
+      "normalization_fit_end": "2020-12-31",
+      "child_sampled_peak_rss_mib": 356.62109375,
+      "supervised_elapsed_seconds": 11.593999999808148,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00002048",
+          "timesteps": 2048
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "aa50cd6b0959476006f43099fd6ba6d49eb803722637946b63313e1769d70c8a"
+    },
+    {
+      "job_id": "3b9a597d-7ceb-4fd0-9bac-d85ae7359492",
+      "configuration": {
+        "name": "WF ppo 0.0001 wf_2019",
+        "algorithm": "ppo",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 2048,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          64,
+          64
+        ],
+        "checkpoint_frequency": 2048,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2018-12-31",
+        "ppo": {
+          "learning_rate": 0.0001,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 20000,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 2048,
+      "training_seconds": 3.905999999959022,
+      "files": {
+        "model.zip": "c91e64c472220cfb316439c743b30a9da3bc0d21dc124581257f9e6f259826da",
+        "normalizer.json": "4b630fe917d7fb649dc568565bf005398557849f25be2692938a2ede6db43807"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.0001,
+        "train/entropy_loss": -14.186214303970337,
+        "train/policy_gradient_loss": -0.010059987287968397,
+        "train/value_loss": 0.05361128728836775,
+        "train/approx_kl": 0.0004140788223594427,
+        "train/clip_fraction": 0.0,
+        "train/loss": -0.00578603520989418,
+        "train/explained_variance": -29.037677764892578,
+        "train/std": 0.999810516834259,
+        "train/n_updates": 40.0,
+        "train/clip_range": 0.2
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2018-12-31",
+      "normalization_fit_end": "2018-12-31",
+      "child_sampled_peak_rss_mib": 356.796875,
+      "supervised_elapsed_seconds": 11.452999999979511,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00002048",
+          "timesteps": 2048
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "0ed70cfcd8a2e9479607c9f09bbacdae7b749dcdd703d740683708746784de2d"
+    },
+    {
+      "job_id": "f3d4d9a9-da3d-4719-84f5-5321ce102ab4",
+      "configuration": {
+        "name": "WF ppo 0.0001 wf_2021",
+        "algorithm": "ppo",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 2048,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          64,
+          64
+        ],
+        "checkpoint_frequency": 2048,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2020-12-31",
+        "ppo": {
+          "learning_rate": 0.0001,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 20000,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 2048,
+      "training_seconds": 4.702999999979511,
+      "files": {
+        "model.zip": "f312681914788ad454f7a7cd00623620c8d9b42a60aa742774b5b2201cfc82ae",
+        "normalizer.json": "84072bff8725c7040f62c5b74feac55d54d124064a67ef4554796649902ecdd9"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.0001,
+        "train/entropy_loss": -14.186255073547363,
+        "train/policy_gradient_loss": -0.008894454222172499,
+        "train/value_loss": 0.05918952003121376,
+        "train/approx_kl": 0.0003428875934332609,
+        "train/clip_fraction": 0.0,
+        "train/loss": 0.00010363012552261353,
+        "train/explained_variance": -67.37305450439453,
+        "train/std": 0.99945467710495,
+        "train/n_updates": 40.0,
+        "train/clip_range": 0.2
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2020-12-31",
+      "normalization_fit_end": "2020-12-31",
+      "child_sampled_peak_rss_mib": 355.69140625,
+      "supervised_elapsed_seconds": 12.875,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00002048",
+          "timesteps": 2048
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "98e1e556ee244d0d9c364d08c891ed7d0308e2d22d1d29c61f963db76283262e"
+    },
+    {
+      "job_id": "645e34b8-3473-46ca-836e-ab7a35c84b07",
+      "configuration": {
+        "name": "WF ddpg 0.001 wf_2019",
+        "algorithm": "ddpg",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 2048,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          64,
+          64
+        ],
+        "checkpoint_frequency": 2048,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2018-12-31",
+        "ppo": {
+          "learning_rate": 0.0003,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 4096,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 2048,
+      "training_seconds": 11.5,
+      "files": {
+        "model.zip": "889b9b3de091f357b5cf76b4c05c3a1e2ad32920bcdfcf15fc99d6a5c734450b",
+        "normalizer.json": "4b630fe917d7fb649dc568565bf005398557849f25be2692938a2ede6db43807",
+        "replay_buffer.pkl": "46f4eec3b2e7fae44527a3ab910765b88a32328714723b44f610117dac39a655"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.001,
+        "train/n_updates": 1792.0,
+        "train/actor_loss": -0.09004008024930954,
+        "train/critic_loss": 1.7216327250935137e-05
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2018-12-31",
+      "normalization_fit_end": "2018-12-31",
+      "child_sampled_peak_rss_mib": 371.08203125,
+      "supervised_elapsed_seconds": 18.95299999997951,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00002048",
+          "timesteps": 2048
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "4ddf031b4722a58f29e4b23d5ae6babf0542736596a8bee6331995607eed1ea7"
+    },
+    {
+      "job_id": "c65881d0-83c4-46a9-bb3e-92b2eb730427",
+      "configuration": {
+        "name": "WF ddpg 0.001 wf_2021",
+        "algorithm": "ddpg",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 2048,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          64,
+          64
+        ],
+        "checkpoint_frequency": 2048,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2020-12-31",
+        "ppo": {
+          "learning_rate": 0.0003,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 4096,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 2048,
+      "training_seconds": 13.983999999938533,
+      "files": {
+        "model.zip": "f08791e1d1c629d4b78a1062e2b6c39226d011a2e1d58656acc81b335416a3c8",
+        "normalizer.json": "84072bff8725c7040f62c5b74feac55d54d124064a67ef4554796649902ecdd9",
+        "replay_buffer.pkl": "2d9a4613cecc2eecd3c16f97ed880701bc77ad0634cdd7e2551f86162d2a64a5"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.001,
+        "train/n_updates": 1792.0,
+        "train/actor_loss": -0.09124808013439178,
+        "train/critic_loss": 3.3305615943390876e-05
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2020-12-31",
+      "normalization_fit_end": "2020-12-31",
+      "child_sampled_peak_rss_mib": 373.55078125,
+      "supervised_elapsed_seconds": 22.280999999959022,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00002048",
+          "timesteps": 2048
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "ae66191611754372d4666007cacc1c4c7d458edd113d586a5ac32649f230a81d"
+    },
+    {
+      "job_id": "af36e560-03a5-4fbe-9276-01d85dd4af10",
+      "configuration": {
+        "name": "WF ddpg 0.0003 wf_2019",
+        "algorithm": "ddpg",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 2048,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          64,
+          64
+        ],
+        "checkpoint_frequency": 2048,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2018-12-31",
+        "ppo": {
+          "learning_rate": 0.0003,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.0003,
+          "buffer_size": 4096,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 2048,
+      "training_seconds": 12.375,
+      "files": {
+        "model.zip": "572ccaf69cb380b3345dbfd2be8ab12407827d24ec74e8ebdfd0c73d60e4098f",
+        "normalizer.json": "4b630fe917d7fb649dc568565bf005398557849f25be2692938a2ede6db43807",
+        "replay_buffer.pkl": "b17bdde3401091142cdb4732a3a79f6c3697a420a9ad3d1fc9429dcae08e81a0"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.0003,
+        "train/n_updates": 1792.0,
+        "train/actor_loss": -0.10160508751869202,
+        "train/critic_loss": 2.148769999621436e-05
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2018-12-31",
+      "normalization_fit_end": "2018-12-31",
+      "child_sampled_peak_rss_mib": 373.90234375,
+      "supervised_elapsed_seconds": 20.70299999997951,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00002048",
+          "timesteps": 2048
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "9cec640e2d3445a1d36cb92eb028dce4020d2433410c8d4634c9ad257a16ded1"
+    },
+    {
+      "job_id": "136bfad0-51c7-4fb0-bf57-5f53f8ddc671",
+      "configuration": {
+        "name": "WF ddpg 0.0003 wf_2021",
+        "algorithm": "ddpg",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 2048,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          64,
+          64
+        ],
+        "checkpoint_frequency": 2048,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2020-12-31",
+        "ppo": {
+          "learning_rate": 0.0003,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.0003,
+          "buffer_size": 4096,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 2048,
+      "training_seconds": 14.077999999979511,
+      "files": {
+        "model.zip": "decae3fb5cb58b20b3c8008a157e8300c7b8a7368776f1a9ebc1ab83362ad6fb",
+        "normalizer.json": "84072bff8725c7040f62c5b74feac55d54d124064a67ef4554796649902ecdd9",
+        "replay_buffer.pkl": "052e7629978ae38f28b4b8d05a6fead859ca46cab02ce56d26040a02bda903ac"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.0003,
+        "train/n_updates": 1792.0,
+        "train/actor_loss": -0.09790796041488647,
+        "train/critic_loss": 3.0215138394851238e-05
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2020-12-31",
+      "normalization_fit_end": "2020-12-31",
+      "child_sampled_peak_rss_mib": 373.62890625,
+      "supervised_elapsed_seconds": 21.468000000109896,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00002048",
+          "timesteps": 2048
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "2438ecd3853cea534d4afca874877539aa818d4bc6f9ba575fa2d81d5260208b"
+    },
+    {
+      "job_id": "c9132a6b-4e37-44b6-83a9-13e4fe7ccaea",
+      "configuration": {
+        "name": "Initial ppo seed7",
+        "algorithm": "ppo",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 7,
+        "total_timesteps": 16384,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          64,
+          64
+        ],
+        "checkpoint_frequency": 4096,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2021-12-31",
+        "ppo": {
+          "learning_rate": 0.0001,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 20000,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 16384,
+      "training_seconds": 34.125,
+      "files": {
+        "model.zip": "5497d97efe907faf7af9dddb890b9644bd829d22f6418975c3bbff471aa3afc7",
+        "normalizer.json": "0a51ffaecceb6a5ff51d3b7ab508c932fdf546fbcb98f19b66c913933c771781"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.0001,
+        "train/entropy_loss": -14.17491102218628,
+        "train/policy_gradient_loss": -0.01623581824824214,
+        "train/value_loss": 0.0014009638573043049,
+        "train/approx_kl": 0.0011223428882658482,
+        "train/clip_fraction": 0.00078125,
+        "train/loss": -0.039685096591711044,
+        "train/explained_variance": -1.174083948135376,
+        "train/std": 0.9983559846878052,
+        "train/n_updates": 320.0,
+        "train/clip_range": 0.2
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2021-12-31",
+      "normalization_fit_end": "2021-12-31",
+      "child_sampled_peak_rss_mib": 358.98046875,
+      "supervised_elapsed_seconds": 42.15599999995902,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00004096",
+          "timesteps": 4096
+        },
+        {
+          "path": "checkpoints/step-00008192",
+          "timesteps": 8192
+        },
+        {
+          "path": "checkpoints/step-00012288",
+          "timesteps": 12288
+        },
+        {
+          "path": "checkpoints/step-00016384",
+          "timesteps": 16384
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "87fc4d4685b6d28bcd13cd22d696eeb068729ff7741bf971a0d77b3632aff204"
+    },
+    {
+      "job_id": "2f7af50a-c493-413c-bb75-cd284ba41f52",
+      "configuration": {
+        "name": "Initial ppo seed42",
+        "algorithm": "ppo",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 16384,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          64,
+          64
+        ],
+        "checkpoint_frequency": 4096,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2021-12-31",
+        "ppo": {
+          "learning_rate": 0.0001,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 20000,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 16384,
+      "training_seconds": 34.03099999995902,
+      "files": {
+        "model.zip": "f2320aa7a64f438dda73fd85b7ae712da486bf9ee094484934a38090f601302a",
+        "normalizer.json": "0a51ffaecceb6a5ff51d3b7ab508c932fdf546fbcb98f19b66c913933c771781"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.0001,
+        "train/entropy_loss": -14.20608983039856,
+        "train/policy_gradient_loss": -0.018278096662834288,
+        "train/value_loss": 0.0010591019236017019,
+        "train/approx_kl": 0.001300152624025941,
+        "train/clip_fraction": 0.0015625,
+        "train/loss": -0.04442179203033447,
+        "train/explained_variance": 0.19976264238357544,
+        "train/std": 1.001758098602295,
+        "train/n_updates": 320.0,
+        "train/clip_range": 0.2
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2021-12-31",
+      "normalization_fit_end": "2021-12-31",
+      "child_sampled_peak_rss_mib": 359.2578125,
+      "supervised_elapsed_seconds": 49.734999999869615,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00004096",
+          "timesteps": 4096
+        },
+        {
+          "path": "checkpoints/step-00008192",
+          "timesteps": 8192
+        },
+        {
+          "path": "checkpoints/step-00012288",
+          "timesteps": 12288
+        },
+        {
+          "path": "checkpoints/step-00016384",
+          "timesteps": 16384
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "5a80292a067f099511b3438d9dd30a7303d7d84b53e53bff870bc7e2e33816e0"
+    },
+    {
+      "job_id": "5606b002-d1c1-44b6-8a50-f0916a8c5191",
+      "configuration": {
+        "name": "Initial ppo seed123",
+        "algorithm": "ppo",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 123,
+        "total_timesteps": 16384,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          64,
+          64
+        ],
+        "checkpoint_frequency": 4096,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2021-12-31",
+        "ppo": {
+          "learning_rate": 0.0001,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 20000,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 16384,
+      "training_seconds": 35.640000000130385,
+      "files": {
+        "model.zip": "d8f9a780b80c8fbf868d422363c48291491ceda68d03bcd594ec6721e48cbdc9",
+        "normalizer.json": "0a51ffaecceb6a5ff51d3b7ab508c932fdf546fbcb98f19b66c913933c771781"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.0001,
+        "train/entropy_loss": -14.157415199279786,
+        "train/policy_gradient_loss": -0.0159601089078933,
+        "train/value_loss": 0.0014834628003882245,
+        "train/approx_kl": 0.0010477809701114893,
+        "train/clip_fraction": 0.0,
+        "train/loss": -0.02941063791513443,
+        "train/explained_variance": -1.2648823261260986,
+        "train/std": 0.9969426989555359,
+        "train/n_updates": 320.0,
+        "train/clip_range": 0.2
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2021-12-31",
+      "normalization_fit_end": "2021-12-31",
+      "child_sampled_peak_rss_mib": 359.69921875,
+      "supervised_elapsed_seconds": 44.17199999978766,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00004096",
+          "timesteps": 4096
+        },
+        {
+          "path": "checkpoints/step-00008192",
+          "timesteps": 8192
+        },
+        {
+          "path": "checkpoints/step-00012288",
+          "timesteps": 12288
+        },
+        {
+          "path": "checkpoints/step-00016384",
+          "timesteps": 16384
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "e14e982632b44a3c7d2c52230d2261785eab6d9020725a6f2415088118bdfac7"
+    },
+    {
+      "job_id": "c2001498-f839-4b80-bffc-7208b95419cb",
+      "configuration": {
+        "name": "Initial ddpg seed7",
+        "algorithm": "ddpg",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 7,
+        "total_timesteps": 8192,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          64,
+          64
+        ],
+        "checkpoint_frequency": 4096,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2021-12-31",
+        "ppo": {
+          "learning_rate": 0.0003,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 20000,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 8192,
+      "training_seconds": 64.07799999997951,
+      "files": {
+        "model.zip": "b8c537164b3259a4871be2d9b815802e7b3af9a04e2e20237aabf894ec4f6b65",
+        "normalizer.json": "0a51ffaecceb6a5ff51d3b7ab508c932fdf546fbcb98f19b66c913933c771781",
+        "replay_buffer.pkl": "79ef6e7b6f91eb893744ad221ec7f2d1399477bad19955d679b6683f5ad72072"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.001,
+        "train/n_updates": 7936.0,
+        "train/actor_loss": -0.02368466928601265,
+        "train/critic_loss": 1.0307266165909823e-05
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2021-12-31",
+      "normalization_fit_end": "2021-12-31",
+      "child_sampled_peak_rss_mib": 449.76171875,
+      "supervised_elapsed_seconds": 72.04700000002049,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00004096",
+          "timesteps": 4096
+        },
+        {
+          "path": "checkpoints/step-00008192",
+          "timesteps": 8192
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "c48b1c973388073a427c11f1008f0649057ab33266a227f2b46675205b41dacb"
+    },
+    {
+      "job_id": "17f8fdaf-e830-402e-a433-712d52926fba",
+      "configuration": {
+        "name": "Initial ddpg seed42",
+        "algorithm": "ddpg",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 8192,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          64,
+          64
+        ],
+        "checkpoint_frequency": 4096,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2021-12-31",
+        "ppo": {
+          "learning_rate": 0.0003,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 20000,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 8192,
+      "training_seconds": 50.73399999993853,
+      "files": {
+        "model.zip": "61c6ecc8e550cc1d56a5e5fa35344450735f49ca31fa368ed6da86b297b5d019",
+        "normalizer.json": "0a51ffaecceb6a5ff51d3b7ab508c932fdf546fbcb98f19b66c913933c771781",
+        "replay_buffer.pkl": "92116feabf762980cc8db683d0961a66f66139312f02d3721ec8133bd6fd0703"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.001,
+        "train/n_updates": 7936.0,
+        "train/actor_loss": -0.1098647341132164,
+        "train/critic_loss": 9.519618470221758e-05
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2021-12-31",
+      "normalization_fit_end": "2021-12-31",
+      "child_sampled_peak_rss_mib": 448.25,
+      "supervised_elapsed_seconds": 59.687000000150874,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00004096",
+          "timesteps": 4096
+        },
+        {
+          "path": "checkpoints/step-00008192",
+          "timesteps": 8192
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "4ee0a7991c250a8a3b42ac47f4d2e5e8e138aeb56f6d2274e7fee71cbaa07a69"
+    },
+    {
+      "job_id": "e78d175d-b651-45e9-b152-73982be2adc0",
+      "configuration": {
+        "name": "Initial ddpg seed123",
+        "algorithm": "ddpg",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 123,
+        "total_timesteps": 8192,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          64,
+          64
+        ],
+        "checkpoint_frequency": 4096,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2021-12-31",
+        "ppo": {
+          "learning_rate": 0.0003,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 20000,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 8192,
+      "training_seconds": 154.89100000006147,
+      "files": {
+        "model.zip": "c3863e7f02f8769c6c2f155e9d1f6e9cc2b0f081a3908df48491819aa3173917",
+        "normalizer.json": "0a51ffaecceb6a5ff51d3b7ab508c932fdf546fbcb98f19b66c913933c771781",
+        "replay_buffer.pkl": "c0d87a0130c78ae0c82c6e5d7656d38fed848952654173c62991d3c532625980"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.001,
+        "train/n_updates": 7936.0,
+        "train/actor_loss": -0.0454278290271759,
+        "train/critic_loss": 1.7047448636731133e-05
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2021-12-31",
+      "normalization_fit_end": "2021-12-31",
+      "child_sampled_peak_rss_mib": 444.40234375,
+      "supervised_elapsed_seconds": 172.1720000000205,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00004096",
+          "timesteps": 4096
+        },
+        {
+          "path": "checkpoints/step-00008192",
+          "timesteps": 8192
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "f8f873352871aebc4581342ffb978737c3cd3dd81e9ac322cb55afe27c48434f"
+    }
+  ],
+  "smoke_jobs": [
+    {
+      "job_id": "5e4563bb-dab0-4e5a-8ec8-51c58c572f2e",
+      "configuration": {
+        "name": "Smoke historical ppo",
+        "algorithm": "ppo",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 256,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          32,
+          32
+        ],
+        "checkpoint_frequency": 256,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2021-12-31",
+        "ppo": {
+          "learning_rate": 0.0003,
+          "n_steps": 64,
+          "batch_size": 32,
+          "n_epochs": 2,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 20000,
+          "batch_size": 64,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 256,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 256,
+      "training_seconds": 0.6089999999385327,
+      "files": {
+        "model.zip": "b8246198398cb6a2a9cfe53b8a18c731c861b40e06a457972b8f53c9b2f4986b",
+        "normalizer.json": "0a51ffaecceb6a5ff51d3b7ab508c932fdf546fbcb98f19b66c913933c771781"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.0003,
+        "train/entropy_loss": -14.177644491195679,
+        "train/policy_gradient_loss": -0.002046668203547597,
+        "train/value_loss": 0.24819789454340935,
+        "train/approx_kl": 2.1119602024555206e-05,
+        "train/clip_fraction": 0.0,
+        "train/loss": 0.1121152862906456,
+        "train/explained_variance": -69.60343933105469,
+        "train/std": 0.9988271594047546,
+        "train/n_updates": 8.0,
+        "train/clip_range": 0.2
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2021-12-31",
+      "normalization_fit_end": "2021-12-31",
+      "child_sampled_peak_rss_mib": 354.1171875,
+      "supervised_elapsed_seconds": 8.547000000020489,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00000256",
+          "timesteps": 256
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "6f820ec6d44e63d85e49d4ebfe44f43f501fb78a34ae4b1c1108b52dba73bc8d"
+    },
+    {
+      "job_id": "475d795a-2d81-43fb-9232-8e416d187e5d",
+      "configuration": {
+        "name": "Smoke historical ddpg",
+        "algorithm": "ddpg",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "seed": 42,
+        "total_timesteps": 256,
+        "lookback": 60,
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "reward_mode": "log_return",
+        "risk_penalty": 0.0,
+        "normalize_observations": true,
+        "net_arch": [
+          32,
+          32
+        ],
+        "checkpoint_frequency": 256,
+        "max_seconds": 600,
+        "max_memory_mb": 2048,
+        "training_end": "2021-12-31",
+        "ppo": {
+          "learning_rate": 0.0003,
+          "n_steps": 256,
+          "batch_size": 64,
+          "n_epochs": 5,
+          "gamma": 0.99,
+          "gae_lambda": 0.95,
+          "clip_range": 0.2,
+          "ent_coef": 0.0,
+          "vf_coef": 0.5,
+          "max_grad_norm": 0.5
+        },
+        "ddpg": {
+          "learning_rate": 0.001,
+          "buffer_size": 1024,
+          "batch_size": 32,
+          "gamma": 0.99,
+          "tau": 0.005,
+          "train_freq": 1,
+          "gradient_steps": 1,
+          "learning_starts": 32,
+          "noise_sigma": 0.1
+        }
+      },
+      "actual_timesteps": 256,
+      "training_seconds": 1.8439999998081475,
+      "files": {
+        "model.zip": "bfcc63e9898d4cc2e0e9252ad181f65723232bdbedd67cbfbf0bc7db8b7b677e",
+        "normalizer.json": "0a51ffaecceb6a5ff51d3b7ab508c932fdf546fbcb98f19b66c913933c771781",
+        "replay_buffer.pkl": "a30dc9429d8bbe97864906a27da9008341c6df36d9ebbf0afac548cf1534c50c"
+      },
+      "learning_metrics": {
+        "train/learning_rate": 0.001,
+        "train/n_updates": 224.0,
+        "train/actor_loss": 0.0032561456318944693,
+        "train/critic_loss": 4.0726863517193124e-05
+      },
+      "training_start": "2015-01-02",
+      "training_end": "2021-12-31",
+      "normalization_fit_end": "2021-12-31",
+      "child_sampled_peak_rss_mib": 358.4765625,
+      "supervised_elapsed_seconds": 10.796999999787658,
+      "checkpoints": [
+        {
+          "path": "checkpoints/step-00000256",
+          "timesteps": 256
+        }
+      ],
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "config_sha256": "0374575333e34e071b25ca614551a2a4ad48d397c384ab10de3262e7b6b10f2f"
+    }
+  ],
+  "smoke_validation": {
+    "ppo": {
+      "cumulative_return": 0.10766622410145454,
+      "annualized_volatility": 0.1436661595403942,
+      "sharpe_ratio": 0.43043347845728536,
+      "max_drawdown": 0.15564309204132065,
+      "final_equity": 11076.662241014545,
+      "total_costs": 517.2014744511768
+    },
+    "ddpg": {
+      "cumulative_return": -0.3985421816794845,
+      "annualized_volatility": 0.1538783087094958,
+      "sharpe_ratio": -1.5874299472755222,
+      "max_drawdown": 0.4188978401306823,
+      "final_equity": 6014.578183205155,
+      "total_costs": 4475.917151211544
+    }
+  },
+  "validation": {
+    "ppo": [
+      {
+        "config": {
+          "name": "Initial ppo seed7",
+          "strategy": "ppo",
+          "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+          "lookback": 60,
+          "seed": 7,
+          "initial_capital": 10000.0,
+          "transaction_cost_bps": 10.0,
+          "risk_free_rate": 0.0,
+          "reward_mode": "log_return",
+          "risk_penalty": 0.0
+        },
+        "date_start": "2022-01-03",
+        "date_end": "2023-12-29",
+        "intervals": 500,
+        "metrics": {
+          "cumulative_return": -0.13418483719009577,
+          "annualized_volatility": 0.15003396448743783,
+          "sharpe_ratio": -0.4090419726131763,
+          "max_drawdown": 0.22454459873111743,
+          "final_equity": 8658.151628099042,
+          "total_costs": 3030.3741282468022
+        },
+        "research_metrics": {
+          "annualized_return": -0.07004422790852495,
+          "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+          "annualized_return_status": "defined",
+          "annualization_factor": 252,
+          "intervals": 500,
+          "turnover_total": 344.60307172734935,
+          "turnover_mean": 0.6892061434546988,
+          "transaction_costs": 3030.3741282468022,
+          "weight_distribution": {
+            "AAPL": {
+              "mean": 0.10231469841043271,
+              "std_across_dates": 0.07273134550226888,
+              "min": 0.0,
+              "max": 0.33800601116381584,
+              "last_target": 0.0
+            },
+            "MSFT": {
+              "mean": 0.11627614602122881,
+              "std_across_dates": 0.06604938269468044,
+              "min": 0.0,
+              "max": 0.3156416357960552,
+              "last_target": 0.20732838722566765
+            },
+            "JPM": {
+              "mean": 0.09013212097745868,
+              "std_across_dates": 0.06016190993998044,
+              "min": 0.0,
+              "max": 0.2544210973299212,
+              "last_target": 0.1531021973739068
+            },
+            "JNJ": {
+              "mean": 0.0946926131087172,
+              "std_across_dates": 0.04921356741588544,
+              "min": 0.0,
+              "max": 0.24266190524213016,
+              "last_target": 0.21601692649225396
+            },
+            "XOM": {
+              "mean": 0.09627992729006228,
+              "std_across_dates": 0.060813029682554594,
+              "min": 0.0,
+              "max": 0.31430360733065754,
+              "last_target": 0.11405612590412299
+            },
+            "PG": {
+              "mean": 0.10841504193041339,
+              "std_across_dates": 0.06369088858682946,
+              "min": 0.0,
+              "max": 0.2786992649651236,
+              "last_target": 0.06959182272354762
+            },
+            "KO": {
+              "mean": 0.0928149884603398,
+              "std_across_dates": 0.05948383416799006,
+              "min": 0.0,
+              "max": 0.2709610714976277,
+              "last_target": 0.06854197817544143
+            },
+            "WMT": {
+              "mean": 0.08719498145306995,
+              "std_across_dates": 0.05995377173824578,
+              "min": 0.0,
+              "max": 0.2551703665937696,
+              "last_target": 0.05190007823208968
+            },
+            "SPY": {
+              "mean": 0.10006299895754556,
+              "std_across_dates": 0.048623728110920465,
+              "min": 0.0,
+              "max": 0.24463150857223406,
+              "last_target": 0.11318194928268592
+            },
+            "GLD": {
+              "mean": 0.11181648339073166,
+              "std_across_dates": 0.06444154609865019,
+              "min": 0.0,
+              "max": 0.2931488879257813,
+              "last_target": 0.006280534590284034
+            }
+          }
+        },
+        "equity_allocations_sha256": "37c680565a6e7be7bbe20ace207ebc76b9e9842c3794b3f76ee66be504accc35"
+      },
+      {
+        "config": {
+          "name": "Initial ppo seed42",
+          "strategy": "ppo",
+          "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+          "lookback": 60,
+          "seed": 42,
+          "initial_capital": 10000.0,
+          "transaction_cost_bps": 10.0,
+          "risk_free_rate": 0.0,
+          "reward_mode": "log_return",
+          "risk_penalty": 0.0
+        },
+        "date_start": "2022-01-03",
+        "date_end": "2023-12-29",
+        "intervals": 500,
+        "metrics": {
+          "cumulative_return": -0.16272173939414947,
+          "annualized_volatility": 0.1511808153124699,
+          "sharpe_ratio": -0.5164644545143003,
+          "max_drawdown": 0.26015911292318716,
+          "final_equity": 8372.782606058505,
+          "total_costs": 3025.3491276643053
+        },
+        "research_metrics": {
+          "annualized_return": -0.08562069780498922,
+          "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+          "annualized_return_status": "defined",
+          "annualization_factor": 252,
+          "intervals": 500,
+          "turnover_total": 357.5816332755708,
+          "turnover_mean": 0.7151632665511417,
+          "transaction_costs": 3025.3491276643053,
+          "weight_distribution": {
+            "AAPL": {
+              "mean": 0.11582122812913342,
+              "std_across_dates": 0.0679503502325227,
+              "min": 0.0,
+              "max": 0.3142055830918252,
+              "last_target": 0.1535500747617334
+            },
+            "MSFT": {
+              "mean": 0.10990585813774757,
+              "std_across_dates": 0.05662363606188603,
+              "min": 0.0,
+              "max": 0.28133956470992416,
+              "last_target": 0.07085211141966283
+            },
+            "JPM": {
+              "mean": 0.10048137876276585,
+              "std_across_dates": 0.05783279132892454,
+              "min": 0.0,
+              "max": 0.2486657239496708,
+              "last_target": 0.08496939656324684
+            },
+            "JNJ": {
+              "mean": 0.09277165887896674,
+              "std_across_dates": 0.058890837919855984,
+              "min": 0.0,
+              "max": 0.2921110851748381,
+              "last_target": 0.13447545222006738
+            },
+            "XOM": {
+              "mean": 0.10844729878823384,
+              "std_across_dates": 0.06112214397440761,
+              "min": 0.0,
+              "max": 0.2924149374270605,
+              "last_target": 0.07514729290269315
+            },
+            "PG": {
+              "mean": 0.09944056581487132,
+              "std_across_dates": 0.05638674221200671,
+              "min": 0.0,
+              "max": 0.2527366425428126,
+              "last_target": 0.07701664729975163
+            },
+            "KO": {
+              "mean": 0.08250813829184284,
+              "std_across_dates": 0.06803322641543784,
+              "min": 0.0,
+              "max": 0.3214235824222366,
+              "last_target": 0.07997956159524619
+            },
+            "WMT": {
+              "mean": 0.09514068133922936,
+              "std_across_dates": 0.06852591855828562,
+              "min": 0.0,
+              "max": 0.3261955678462982,
+              "last_target": 0.1487326411064714
+            },
+            "SPY": {
+              "mean": 0.08744212619889183,
+              "std_across_dates": 0.06447943306690389,
+              "min": 0.0,
+              "max": 0.2820484747644514,
+              "last_target": 0.11752217761240899
+            },
+            "GLD": {
+              "mean": 0.10804106565831721,
+              "std_across_dates": 0.06395683884037741,
+              "min": 0.0,
+              "max": 0.31250731822931105,
+              "last_target": 0.05775464451871812
+            }
+          }
+        },
+        "equity_allocations_sha256": "e2ad9bc189d84b2e84e1083e4965b9c0c56b34f035afee33a9625d231808578f"
+      },
+      {
+        "config": {
+          "name": "Initial ppo seed123",
+          "strategy": "ppo",
+          "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+          "lookback": 60,
+          "seed": 123,
+          "initial_capital": 10000.0,
+          "transaction_cost_bps": 10.0,
+          "risk_free_rate": 0.0,
+          "reward_mode": "log_return",
+          "risk_penalty": 0.0
+        },
+        "date_start": "2022-01-03",
+        "date_end": "2023-12-29",
+        "intervals": 500,
+        "metrics": {
+          "cumulative_return": -0.12127123993990496,
+          "annualized_volatility": 0.14506721288945895,
+          "sharpe_ratio": -0.37661609955714276,
+          "max_drawdown": 0.2052793123549721,
+          "final_equity": 8787.28760060095,
+          "total_costs": 2969.708462647995
+        },
+        "research_metrics": {
+          "annualized_return": -0.06307928808920583,
+          "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+          "annualized_return_status": "defined",
+          "annualization_factor": 252,
+          "intervals": 500,
+          "turnover_total": 324.95274692993195,
+          "turnover_mean": 0.6499054938598637,
+          "transaction_costs": 2969.708462647995,
+          "weight_distribution": {
+            "AAPL": {
+              "mean": 0.09456173331319773,
+              "std_across_dates": 0.0525417549029354,
+              "min": 0.0,
+              "max": 0.255151660181582,
+              "last_target": 0.12665337547659875
+            },
+            "MSFT": {
+              "mean": 0.10734259952632766,
+              "std_across_dates": 0.05335447401472681,
+              "min": 0.0,
+              "max": 0.26679731560871006,
+              "last_target": 0.11201058365404606
+            },
+            "JPM": {
+              "mean": 0.0983259011728593,
+              "std_across_dates": 0.05065586645882199,
+              "min": 0.0,
+              "max": 0.25814594628496307,
+              "last_target": 0.139692971855402
+            },
+            "JNJ": {
+              "mean": 0.10443171039031122,
+              "std_across_dates": 0.061726485472302105,
+              "min": 0.0,
+              "max": 0.26442332481965425,
+              "last_target": 0.09096580222249032
+            },
+            "XOM": {
+              "mean": 0.10683061425389984,
+              "std_across_dates": 0.06201465384075298,
+              "min": 0.0,
+              "max": 0.33479865042027085,
+              "last_target": 0.1307951346039772
+            },
+            "PG": {
+              "mean": 0.09674185286523934,
+              "std_across_dates": 0.06008883144337067,
+              "min": 0.0,
+              "max": 0.27853082912042737,
+              "last_target": 0.04280896335840226
+            },
+            "KO": {
+              "mean": 0.09800061685124427,
+              "std_across_dates": 0.05895725775449278,
+              "min": 0.0,
+              "max": 0.2772052319720387,
+              "last_target": 0.024285642802715307
+            },
+            "WMT": {
+              "mean": 0.09011380935721063,
+              "std_across_dates": 0.06406455344213041,
+              "min": 0.0,
+              "max": 0.27037458183864754,
+              "last_target": 0.16797514855861664
+            },
+            "SPY": {
+              "mean": 0.0954736351968059,
+              "std_across_dates": 0.04969866838603525,
+              "min": 0.0,
+              "max": 0.24365805163979531,
+              "last_target": 0.04269649684429169
+            },
+            "GLD": {
+              "mean": 0.10817752707290411,
+              "std_across_dates": 0.06566683417481019,
+              "min": 0.0,
+              "max": 0.3128374883284171,
+              "last_target": 0.12211588062345982
+            }
+          }
+        },
+        "equity_allocations_sha256": "2a85d0925fe2b73aa211caae902b2660c4b414bb9ef731cd7fb0cb953db4a3f3"
+      }
+    ],
+    "ddpg": [
+      {
+        "config": {
+          "name": "Initial ddpg seed7",
+          "strategy": "ddpg",
+          "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+          "lookback": 60,
+          "seed": 7,
+          "initial_capital": 10000.0,
+          "transaction_cost_bps": 10.0,
+          "risk_free_rate": 0.0,
+          "reward_mode": "log_return",
+          "risk_penalty": 0.0
+        },
+        "date_start": "2022-01-03",
+        "date_end": "2023-12-29",
+        "intervals": 500,
+        "metrics": {
+          "cumulative_return": -0.4598165393197746,
+          "annualized_volatility": 0.150839096776056,
+          "sharpe_ratio": -1.9811571932719558,
+          "max_drawdown": 0.4749377124334855,
+          "final_equity": 5401.834606802254,
+          "total_costs": 3702.817592035812
+        },
+        "research_metrics": {
+          "annualized_return": -0.2668365493767768,
+          "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+          "annualized_return_status": "defined",
+          "annualization_factor": 252,
+          "intervals": 500,
+          "turnover_total": 514.0940067878919,
+          "turnover_mean": 1.0281880135757837,
+          "transaction_costs": 3702.817592035812,
+          "weight_distribution": {
+            "AAPL": {
+              "mean": 0.02218515743698393,
+              "std_across_dates": 0.06984920929555646,
+              "min": 0.0,
+              "max": 0.5128353834152222,
+              "last_target": 0.0
+            },
+            "MSFT": {
+              "mean": 0.09642547342010907,
+              "std_across_dates": 0.12316089452402443,
+              "min": 0.0,
+              "max": 1.0,
+              "last_target": 0.0
+            },
+            "JPM": {
+              "mean": 0.17397305816780953,
+              "std_across_dates": 0.11002304710749793,
+              "min": 0.0,
+              "max": 0.5,
+              "last_target": 0.0
+            },
+            "JNJ": {
+              "mean": 0.18115948151151337,
+              "std_across_dates": 0.11296554192338401,
+              "min": 0.0,
+              "max": 0.5887570381164551,
+              "last_target": 0.33393025398254395
+            },
+            "XOM": {
+              "mean": 0.13472448652784033,
+              "std_across_dates": 0.12222197323840585,
+              "min": 0.0,
+              "max": 0.5,
+              "last_target": 0.33393025398254395
+            },
+            "PG": {
+              "mean": 0.053337699156431925,
+              "std_across_dates": 0.10349234575710844,
+              "min": 0.0,
+              "max": 1.0,
+              "last_target": 0.0
+            },
+            "KO": {
+              "mean": 0.11776089717859314,
+              "std_across_dates": 0.1137637049145534,
+              "min": 0.0,
+              "max": 0.5,
+              "last_target": 0.0
+            },
+            "WMT": {
+              "mean": 0.07152755894916399,
+              "std_across_dates": 0.10142050533571363,
+              "min": 0.0,
+              "max": 0.5,
+              "last_target": 0.0
+            },
+            "SPY": {
+              "mean": 0.05576492680084138,
+              "std_across_dates": 0.0930575583974936,
+              "min": 0.0,
+              "max": 0.38205377260843915,
+              "last_target": 0.0
+            },
+            "GLD": {
+              "mean": 0.09314126085071336,
+              "std_across_dates": 0.10887006370947586,
+              "min": 0.0,
+              "max": 0.5000012516975403,
+              "last_target": 0.3321394920349121
+            }
+          }
+        },
+        "equity_allocations_sha256": "ffeda57e43dba36f57796c3e4475334475d9575cb364531b66383257b64ef1fd"
+      },
+      {
+        "config": {
+          "name": "Initial ddpg seed42",
+          "strategy": "ddpg",
+          "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+          "lookback": 60,
+          "seed": 42,
+          "initial_capital": 10000.0,
+          "transaction_cost_bps": 10.0,
+          "risk_free_rate": 0.0,
+          "reward_mode": "log_return",
+          "risk_penalty": 0.0
+        },
+        "date_start": "2022-01-03",
+        "date_end": "2023-12-29",
+        "intervals": 500,
+        "metrics": {
+          "cumulative_return": -0.4032486840290278,
+          "annualized_volatility": 0.16474066178492106,
+          "sharpe_ratio": -1.496374401580389,
+          "max_drawdown": 0.4284025720437835,
+          "final_equity": 5967.5131597097225,
+          "total_costs": 4184.579289805661
+        },
+        "research_metrics": {
+          "annualized_return": -0.22909676836891135,
+          "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+          "annualized_return_status": "defined",
+          "annualization_factor": 252,
+          "intervals": 500,
+          "turnover_total": 596.4888340330938,
+          "turnover_mean": 1.1929776680661877,
+          "transaction_costs": 4184.579289805661,
+          "weight_distribution": {
+            "AAPL": {
+              "mean": 0.04865834927871114,
+              "std_across_dates": 0.08834921644574176,
+              "min": 0.0,
+              "max": 0.49999988079071045,
+              "last_target": 0.0
+            },
+            "MSFT": {
+              "mean": 0.09803127980941818,
+              "std_across_dates": 0.12285237131489875,
+              "min": 0.0,
+              "max": 0.5,
+              "last_target": 0.2032309055328369
+            },
+            "JPM": {
+              "mean": 0.1622376623786631,
+              "std_across_dates": 0.17418460835212968,
+              "min": 0.0,
+              "max": 1.0,
+              "last_target": 0.2032309055328369
+            },
+            "JNJ": {
+              "mean": 0.06289312952444667,
+              "std_across_dates": 0.09986868457302822,
+              "min": 0.0,
+              "max": 0.5,
+              "last_target": 0.18707685470581056
+            },
+            "XOM": {
+              "mean": 0.0715217099814188,
+              "std_across_dates": 0.12352331254977175,
+              "min": 0.0,
+              "max": 0.5000002384185791,
+              "last_target": 0.0
+            },
+            "PG": {
+              "mean": 0.16805031692215375,
+              "std_across_dates": 0.14327597068833506,
+              "min": 0.0,
+              "max": 1.0,
+              "last_target": 0.2032309055328369
+            },
+            "KO": {
+              "mean": 0.0603121907387461,
+              "std_across_dates": 0.0999783280308473,
+              "min": 0.0,
+              "max": 0.4999990463256836,
+              "last_target": 0.2032304286956787
+            },
+            "WMT": {
+              "mean": 0.1609024702336107,
+              "std_across_dates": 0.13653625838774247,
+              "min": 0.0,
+              "max": 0.5139681100845337,
+              "last_target": 0.0
+            },
+            "SPY": {
+              "mean": 0.06165426125668344,
+              "std_across_dates": 0.10296378834835912,
+              "min": 0.0,
+              "max": 0.44826189676920575,
+              "last_target": 0.0
+            },
+            "GLD": {
+              "mean": 0.10573862987614814,
+              "std_across_dates": 0.135236252582386,
+              "min": 0.0,
+              "max": 0.5625883936882019,
+              "last_target": 0.0
+            }
+          }
+        },
+        "equity_allocations_sha256": "e94e7c5db2996201ec820a664f8224d861867e912b07f5cdfc7b28ad6d43ee83"
+      },
+      {
+        "config": {
+          "name": "Initial ddpg seed123",
+          "strategy": "ddpg",
+          "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+          "lookback": 60,
+          "seed": 123,
+          "initial_capital": 10000.0,
+          "transaction_cost_bps": 10.0,
+          "risk_free_rate": 0.0,
+          "reward_mode": "log_return",
+          "risk_penalty": 0.0
+        },
+        "date_start": "2022-01-03",
+        "date_end": "2023-12-29",
+        "intervals": 500,
+        "metrics": {
+          "cumulative_return": -0.41360139783939176,
+          "annualized_volatility": 0.18526483560226395,
+          "sharpe_ratio": -1.3571545283874327,
+          "max_drawdown": 0.42818123734377955,
+          "final_equity": 5863.986021606082,
+          "total_costs": 3604.156911045484
+        },
+        "research_metrics": {
+          "annualized_return": -0.235866508616725,
+          "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+          "annualized_return_status": "defined",
+          "annualization_factor": 252,
+          "intervals": 500,
+          "turnover_total": 503.24108509456823,
+          "turnover_mean": 1.0064821701891364,
+          "transaction_costs": 3604.156911045484,
+          "weight_distribution": {
+            "AAPL": {
+              "mean": 0.15192613094676108,
+              "std_across_dates": 0.11272608630698096,
+              "min": 0.0,
+              "max": 0.5243492126464844,
+              "last_target": 0.0
+            },
+            "MSFT": {
+              "mean": 0.12927554705625488,
+              "std_across_dates": 0.11518855062550473,
+              "min": 0.0,
+              "max": 0.5,
+              "last_target": 0.0
+            },
+            "JPM": {
+              "mean": 0.05986565120333718,
+              "std_across_dates": 0.10202524546883646,
+              "min": 0.0,
+              "max": 0.5026335716247559,
+              "last_target": 0.0
+            },
+            "JNJ": {
+              "mean": 0.04280198734601339,
+              "std_across_dates": 0.08797535099533516,
+              "min": 0.0,
+              "max": 0.4806180795033773,
+              "last_target": 0.29739004373550415
+            },
+            "XOM": {
+              "mean": 0.02197155511322476,
+              "std_across_dates": 0.06272833887821846,
+              "min": 0.0,
+              "max": 0.3307178020477295,
+              "last_target": 0.0
+            },
+            "PG": {
+              "mean": 0.10649537677963576,
+              "std_across_dates": 0.11131925624889712,
+              "min": 0.0,
+              "max": 0.5,
+              "last_target": 0.29738980531692505
+            },
+            "KO": {
+              "mean": 0.11950184670800254,
+              "std_across_dates": 0.11663519040103694,
+              "min": 0.0,
+              "max": 0.4999927282333374,
+              "last_target": 0.0
+            },
+            "WMT": {
+              "mean": 0.16221311021787782,
+              "std_across_dates": 0.12471764212590554,
+              "min": 0.0,
+              "max": 1.0,
+              "last_target": 0.29738956689834595
+            },
+            "SPY": {
+              "mean": 0.13904847668239045,
+              "std_across_dates": 0.11294231743089232,
+              "min": 0.0,
+              "max": 0.5,
+              "last_target": 0.10783058404922485
+            },
+            "GLD": {
+              "mean": 0.06690031794650214,
+              "std_across_dates": 0.10274651779885655,
+              "min": 0.0,
+              "max": 0.4756507873535156,
+              "last_target": 0.0
+            }
+          }
+        },
+        "equity_allocations_sha256": "0db872d520a128d7e91d81f2cf1e24ed04b2f722d3fe07f90875f481ec3f811d"
+      }
+    ]
+  },
+  "baselines": {
+    "equal_weight": {
+      "config": {
+        "name": "Comparison equal_weight",
+        "strategy": "equal_weight",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "seed": 42,
+        "split": "validation",
+        "lookback": 60,
+        "risk_aversion": 5.0
+      },
+      "date_start": "2022-01-03",
+      "date_end": "2023-12-29",
+      "intervals": 500,
+      "metrics": {
+        "cumulative_return": 0.14488553942049065,
+        "annualized_volatility": 0.14266755012381652,
+        "sharpe_ratio": 0.5492339460314231,
+        "max_drawdown": 0.14701814278123804,
+        "final_equity": 11448.855394204907,
+        "total_costs": 50.81620730546892
+      },
+      "research_metrics": {
+        "annualized_return": 0.07057249975191855,
+        "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+        "annualized_return_status": "defined",
+        "annualization_factor": 252,
+        "intervals": 500,
+        "turnover_total": 5.050215940047095,
+        "turnover_mean": 0.01010043188009419,
+        "transaction_costs": 50.81620730546892,
+        "weight_distribution": {
+          "AAPL": {
+            "mean": 0.1,
+            "std_across_dates": 0.0,
+            "min": 0.1,
+            "max": 0.1,
+            "last_target": 0.1
+          },
+          "MSFT": {
+            "mean": 0.1,
+            "std_across_dates": 0.0,
+            "min": 0.1,
+            "max": 0.1,
+            "last_target": 0.1
+          },
+          "JPM": {
+            "mean": 0.1,
+            "std_across_dates": 0.0,
+            "min": 0.1,
+            "max": 0.1,
+            "last_target": 0.1
+          },
+          "JNJ": {
+            "mean": 0.1,
+            "std_across_dates": 0.0,
+            "min": 0.1,
+            "max": 0.1,
+            "last_target": 0.1
+          },
+          "XOM": {
+            "mean": 0.1,
+            "std_across_dates": 0.0,
+            "min": 0.1,
+            "max": 0.1,
+            "last_target": 0.1
+          },
+          "PG": {
+            "mean": 0.1,
+            "std_across_dates": 0.0,
+            "min": 0.1,
+            "max": 0.1,
+            "last_target": 0.1
+          },
+          "KO": {
+            "mean": 0.1,
+            "std_across_dates": 0.0,
+            "min": 0.1,
+            "max": 0.1,
+            "last_target": 0.1
+          },
+          "WMT": {
+            "mean": 0.1,
+            "std_across_dates": 0.0,
+            "min": 0.1,
+            "max": 0.1,
+            "last_target": 0.1
+          },
+          "SPY": {
+            "mean": 0.1,
+            "std_across_dates": 0.0,
+            "min": 0.1,
+            "max": 0.1,
+            "last_target": 0.1
+          },
+          "GLD": {
+            "mean": 0.1,
+            "std_across_dates": 0.0,
+            "min": 0.1,
+            "max": 0.1,
+            "last_target": 0.1
+          }
+        }
+      },
+      "equity_allocations_sha256": "9c73bb7cca4cf8872f370fba5b89aa454a9e4c407d4145f2a171b8fdcb24d67e"
+    },
+    "markowitz": {
+      "config": {
+        "name": "Comparison markowitz",
+        "strategy": "markowitz",
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "initial_capital": 10000.0,
+        "transaction_cost_bps": 10.0,
+        "risk_free_rate": 0.0,
+        "seed": 42,
+        "split": "validation",
+        "lookback": 60,
+        "risk_aversion": 5.0
+      },
+      "date_start": "2022-01-03",
+      "date_end": "2023-12-29",
+      "intervals": 500,
+      "metrics": {
+        "cumulative_return": -0.30997918167219096,
+        "annualized_volatility": 0.24498767136315075,
+        "sharpe_ratio": -0.6403064374923403,
+        "max_drawdown": 0.3776247944950647,
+        "final_equity": 6900.2081832780905,
+        "total_costs": 1260.4140227902813
+      },
+      "research_metrics": {
+        "annualized_return": -0.1705570011719189,
+        "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+        "annualized_return_status": "defined",
+        "annualization_factor": 252,
+        "intervals": 500,
+        "turnover_total": 161.0163318617765,
+        "turnover_mean": 0.322032663723553,
+        "transaction_costs": 1260.4140227902813,
+        "weight_distribution": {
+          "AAPL": {
+            "mean": 0.16381378013154482,
+            "std_across_dates": 0.31344818749054304,
+            "min": 0.0,
+            "max": 0.9999999999999996,
+            "last_target": 1.266333896150408e-16
+          },
+          "MSFT": {
+            "mean": 0.17360391433852257,
+            "std_across_dates": 0.33419838398218854,
+            "min": 0.0,
+            "max": 0.9999999999999996,
+            "last_target": 0.06400127378295258
+          },
+          "JPM": {
+            "mean": 0.11381038453388456,
+            "std_across_dates": 0.2519483079307027,
+            "min": 0.0,
+            "max": 0.9999999999999991,
+            "last_target": 0.9359987262170443
+          },
+          "JNJ": {
+            "mean": 0.04060900095436214,
+            "std_across_dates": 0.13975556642592052,
+            "min": 0.0,
+            "max": 0.9866454032675267,
+            "last_target": 7.231258676221023e-16
+          },
+          "XOM": {
+            "mean": 0.3333809866350873,
+            "std_across_dates": 0.40029572567223565,
+            "min": 0.0,
+            "max": 0.9999999999999998,
+            "last_target": 8.484515947404729e-16
+          },
+          "PG": {
+            "mean": 0.030783000497787212,
+            "std_across_dates": 0.11407099564282702,
+            "min": 0.0,
+            "max": 0.9976965506406925,
+            "last_target": 0.0
+          },
+          "KO": {
+            "mean": 0.010515216650951802,
+            "std_across_dates": 0.06523444736751571,
+            "min": 0.0,
+            "max": 0.598428880606627,
+            "last_target": 9.072296416727234e-16
+          },
+          "WMT": {
+            "mean": 0.0859616529635607,
+            "std_across_dates": 0.20402741632797788,
+            "min": 0.0,
+            "max": 0.9999999999999982,
+            "last_target": 3.9510584203205263e-16
+          },
+          "SPY": {
+            "mean": 1.2860424654606828e-05,
+            "std_across_dates": 0.0002872801257029319,
+            "min": 0.0,
+            "max": 0.006430212327217087,
+            "last_target": 0.0
+          },
+          "GLD": {
+            "mean": 0.047509202869644225,
+            "std_across_dates": 0.18679125530351554,
+            "min": 0.0,
+            "max": 0.9999999999999998,
+            "last_target": 2.1078123575726633e-16
+          }
+        }
+      },
+      "equity_allocations_sha256": "be9414281306f309638582a9ab220d56d80b10ae213c0bc1a8862c08804189c8"
+    }
+  },
+  "walk_forward": {
+    "ppo": [
+      {
+        "candidate_id": "0.0003",
+        "fold_id": "wf_2019",
+        "job_id": "15537d98-a3be-41cf-8d71-d4ecca120cc8",
+        "evaluation": {
+          "config": {
+            "name": "WF ppo 0.0003 wf_2019",
+            "strategy": "ppo",
+            "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+            "lookback": 60,
+            "seed": 42,
+            "initial_capital": 10000.0,
+            "transaction_cost_bps": 10.0,
+            "risk_free_rate": 0.0,
+            "reward_mode": "log_return",
+            "risk_penalty": 0.0
+          },
+          "date_start": "2019-01-02",
+          "date_end": "2019-12-31",
+          "intervals": 251,
+          "metrics": {
+            "cumulative_return": 0.1548179915877037,
+            "annualized_volatility": 0.10319485963683725,
+            "sharpe_ratio": 1.4522647546109055,
+            "max_drawdown": 0.06370140973185368,
+            "final_equity": 11548.179915877037,
+            "total_costs": 1740.6486654224648
+          },
+          "research_metrics": {
+            "annualized_return": 0.1554804431763016,
+            "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+            "annualized_return_status": "defined",
+            "annualization_factor": 252,
+            "intervals": 251,
+            "turnover_total": 159.84988490582825,
+            "turnover_mean": 0.6368521310989173,
+            "transaction_costs": 1740.6486654224648,
+            "weight_distribution": {
+              "AAPL": {
+                "mean": 0.08588186707802678,
+                "std_across_dates": 0.0469935741525001,
+                "min": 0.0,
+                "max": 0.2263051953373684,
+                "last_target": 0.04869426683419281
+              },
+              "MSFT": {
+                "mean": 0.1166261755169498,
+                "std_across_dates": 0.05961544689006272,
+                "min": 0.0,
+                "max": 0.30020767553812927,
+                "last_target": 0.20749874309533173
+              },
+              "JPM": {
+                "mean": 0.11109645056263402,
+                "std_across_dates": 0.04609448941981048,
+                "min": 0.0007011864334344753,
+                "max": 0.2239310353761539,
+                "last_target": 0.04157528922789627
+              },
+              "JNJ": {
+                "mean": 0.08471471901262886,
+                "std_across_dates": 0.05014474139236019,
+                "min": 0.0,
+                "max": 0.2150456912815571,
+                "last_target": 0.09656554357045227
+              },
+              "XOM": {
+                "mean": 0.10146958329787499,
+                "std_across_dates": 0.050550309406590416,
+                "min": 0.0,
+                "max": 0.2722477850038558,
+                "last_target": 0.12288527366601759
+              },
+              "PG": {
+                "mean": 0.09640698116220638,
+                "std_across_dates": 0.0476715315592443,
+                "min": 0.0,
+                "max": 0.21040082356840786,
+                "last_target": 0.12622079056584173
+              },
+              "KO": {
+                "mean": 0.09604526366555616,
+                "std_across_dates": 0.06210737883417296,
+                "min": 0.0,
+                "max": 0.28027661082645255,
+                "last_target": 0.13813552343183094
+              },
+              "WMT": {
+                "mean": 0.09472345989982356,
+                "std_across_dates": 0.06122064441582789,
+                "min": 0.0,
+                "max": 0.2863932983018458,
+                "last_target": 0.12454663486116463
+              },
+              "SPY": {
+                "mean": 0.111566005324358,
+                "std_across_dates": 0.07256793582347143,
+                "min": 0.0,
+                "max": 0.3167413045652211,
+                "last_target": 0.09387793474727207
+              },
+              "GLD": {
+                "mean": 0.10146949447994152,
+                "std_across_dates": 0.056463423111897636,
+                "min": 0.0,
+                "max": 0.26329097282141445,
+                "last_target": 0.0
+              }
+            }
+          },
+          "equity_allocations_sha256": "0e1ff7fdf6d1d57af4cb9896bf4b0effd371bb761b046a05945517107e20c0b0"
+        }
+      },
+      {
+        "candidate_id": "0.0003",
+        "fold_id": "wf_2021",
+        "job_id": "21a2552f-d433-4249-98a2-1f4ef54f2d31",
+        "evaluation": {
+          "config": {
+            "name": "WF ppo 0.0003 wf_2021",
+            "strategy": "ppo",
+            "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+            "lookback": 60,
+            "seed": 42,
+            "initial_capital": 10000.0,
+            "transaction_cost_bps": 10.0,
+            "risk_free_rate": 0.0,
+            "reward_mode": "log_return",
+            "risk_penalty": 0.0
+          },
+          "date_start": "2021-01-04",
+          "date_end": "2021-12-31",
+          "intervals": 251,
+          "metrics": {
+            "cumulative_return": 0.08270247659566676,
+            "annualized_volatility": 0.11204105655218137,
+            "sharpe_ratio": 0.7680449692690345,
+            "max_drawdown": 0.061010658705892507,
+            "final_equity": 10827.024765956667,
+            "total_costs": 1735.6189850277156
+          },
+          "research_metrics": {
+            "annualized_return": 0.08304528689041786,
+            "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+            "annualized_return_status": "defined",
+            "annualization_factor": 252,
+            "intervals": 251,
+            "turnover_total": 167.8023308741535,
+            "turnover_mean": 0.6685351827655517,
+            "transaction_costs": 1735.6189850277156,
+            "weight_distribution": {
+              "AAPL": {
+                "mean": 0.10654653650893761,
+                "std_across_dates": 0.04408611863174162,
+                "min": 0.0,
+                "max": 0.25542725562117996,
+                "last_target": 0.010836652759462592
+              },
+              "MSFT": {
+                "mean": 0.09841348606845578,
+                "std_across_dates": 0.05237524515586644,
+                "min": 0.0,
+                "max": 0.2415110724978149,
+                "last_target": 0.07482821801677346
+              },
+              "JPM": {
+                "mean": 0.09969928728213466,
+                "std_across_dates": 0.04590595058924925,
+                "min": 0.0,
+                "max": 0.21409171051345766,
+                "last_target": 0.0966360748745501
+              },
+              "JNJ": {
+                "mean": 0.0994762534685144,
+                "std_across_dates": 0.05780251053991216,
+                "min": 0.0,
+                "max": 0.25623327034991233,
+                "last_target": 0.13353181565180422
+              },
+              "XOM": {
+                "mean": 0.10804335075868544,
+                "std_across_dates": 0.06412869549904378,
+                "min": 0.0,
+                "max": 0.29008977103512734,
+                "last_target": 0.12618191754445435
+              },
+              "PG": {
+                "mean": 0.07766795641791192,
+                "std_across_dates": 0.04824116375196029,
+                "min": 0.0,
+                "max": 0.18874045326891872,
+                "last_target": 0.05365677485242486
+              },
+              "KO": {
+                "mean": 0.09905829329501264,
+                "std_across_dates": 0.05942051367121078,
+                "min": 0.0,
+                "max": 0.25963132000631756,
+                "last_target": 0.20270519638434054
+              },
+              "WMT": {
+                "mean": 0.1102070672884503,
+                "std_across_dates": 0.06516755221604047,
+                "min": 0.0,
+                "max": 0.26244228752329946,
+                "last_target": 0.01394203985109925
+              },
+              "SPY": {
+                "mean": 0.10978659633247914,
+                "std_across_dates": 0.06894532760564216,
+                "min": 0.0,
+                "max": 0.3277198501293444,
+                "last_target": 0.25000648880377413
+              },
+              "GLD": {
+                "mean": 0.09110117257941812,
+                "std_across_dates": 0.06706153857986084,
+                "min": 0.0,
+                "max": 0.290159787167795,
+                "last_target": 0.037674821261316535
+              }
+            }
+          },
+          "equity_allocations_sha256": "d078b5ac9233915148360f9998e8dac6195dfb4cfe7f0dd2f33b4439a4463447"
+        }
+      },
+      {
+        "candidate_id": "0.0001",
+        "fold_id": "wf_2019",
+        "job_id": "3b9a597d-7ceb-4fd0-9bac-d85ae7359492",
+        "evaluation": {
+          "config": {
+            "name": "WF ppo 0.0001 wf_2019",
+            "strategy": "ppo",
+            "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+            "lookback": 60,
+            "seed": 42,
+            "initial_capital": 10000.0,
+            "transaction_cost_bps": 10.0,
+            "risk_free_rate": 0.0,
+            "reward_mode": "log_return",
+            "risk_penalty": 0.0
+          },
+          "date_start": "2019-01-02",
+          "date_end": "2019-12-31",
+          "intervals": 251,
+          "metrics": {
+            "cumulative_return": 0.2720660848778327,
+            "annualized_volatility": 0.10261438362480221,
+            "sharpe_ratio": 2.4067552417022586,
+            "max_drawdown": 0.05732162163284482,
+            "final_equity": 12720.660848778327,
+            "total_costs": 575.2040042142241
+          },
+          "research_metrics": {
+            "annualized_return": 0.27328624362236337,
+            "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+            "annualized_return_status": "defined",
+            "annualization_factor": 252,
+            "intervals": 251,
+            "turnover_total": 50.64190577931512,
+            "turnover_mean": 0.20176058079408415,
+            "transaction_costs": 575.2040042142241,
+            "weight_distribution": {
+              "AAPL": {
+                "mean": 0.09898287078204047,
+                "std_across_dates": 0.018162497878627244,
+                "min": 0.04842587650055066,
+                "max": 0.14860307736089454,
+                "last_target": 0.08657043627463282
+              },
+              "MSFT": {
+                "mean": 0.10296344191446555,
+                "std_across_dates": 0.015838178026692445,
+                "min": 0.061020043119788175,
+                "max": 0.1488243056461215,
+                "last_target": 0.14074869002215565
+              },
+              "JPM": {
+                "mean": 0.10236416125427272,
+                "std_across_dates": 0.01573717351463545,
+                "min": 0.056194178026635205,
+                "max": 0.1451248882105574,
+                "last_target": 0.09094496737234295
+              },
+              "JNJ": {
+                "mean": 0.09441528774579232,
+                "std_across_dates": 0.016987961312581665,
+                "min": 0.04313844819553196,
+                "max": 0.14329378387192265,
+                "last_target": 0.11000020909123123
+              },
+              "XOM": {
+                "mean": 0.10655330507196273,
+                "std_across_dates": 0.015035695545210176,
+                "min": 0.06318319039419293,
+                "max": 0.14636283414438367,
+                "last_target": 0.0979033733252436
+              },
+              "PG": {
+                "mean": 0.10121787579817579,
+                "std_across_dates": 0.014291857250732691,
+                "min": 0.06383547536097467,
+                "max": 0.14003300201147795,
+                "last_target": 0.10660900096409023
+              },
+              "KO": {
+                "mean": 0.09845279917688864,
+                "std_across_dates": 0.019234496734618887,
+                "min": 0.057741989940404886,
+                "max": 0.1623428112710826,
+                "last_target": 0.1201373442541808
+              },
+              "WMT": {
+                "mean": 0.10022200565564629,
+                "std_across_dates": 0.02140532996620964,
+                "min": 0.04147030599415302,
+                "max": 0.15194766801723744,
+                "last_target": 0.07823279048316181
+              },
+              "SPY": {
+                "mean": 0.09698833168584685,
+                "std_across_dates": 0.016745013150767464,
+                "min": 0.04669598783366383,
+                "max": 0.14444562011631207,
+                "last_target": 0.09090397241525353
+              },
+              "GLD": {
+                "mean": 0.09783992091490863,
+                "std_across_dates": 0.01713927688633406,
+                "min": 0.04686883026733994,
+                "max": 0.14313822309486568,
+                "last_target": 0.07794921579770744
+              }
+            }
+          },
+          "equity_allocations_sha256": "3bd1658a041586a0f085f1b77f9b1223e1255a7faf4d3bb143c17985155a2bd1"
+        }
+      },
+      {
+        "candidate_id": "0.0001",
+        "fold_id": "wf_2021",
+        "job_id": "f3d4d9a9-da3d-4719-84f5-5321ce102ab4",
+        "evaluation": {
+          "config": {
+            "name": "WF ppo 0.0001 wf_2021",
+            "strategy": "ppo",
+            "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+            "lookback": 60,
+            "seed": 42,
+            "initial_capital": 10000.0,
+            "transaction_cost_bps": 10.0,
+            "risk_free_rate": 0.0,
+            "reward_mode": "log_return",
+            "risk_penalty": 0.0
+          },
+          "date_start": "2021-01-04",
+          "date_end": "2021-12-31",
+          "intervals": 251,
+          "metrics": {
+            "cumulative_return": 0.20934673940825688,
+            "annualized_volatility": 0.10750570679532881,
+            "sharpe_ratio": 1.8294437935998338,
+            "max_drawdown": 0.04000849415288821,
+            "final_equity": 12093.467394082569,
+            "total_costs": 552.7245060619499
+          },
+          "research_metrics": {
+            "annualized_return": 0.2102629150601875,
+            "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+            "annualized_return_status": "defined",
+            "annualization_factor": 252,
+            "intervals": 251,
+            "turnover_total": 50.29817563428277,
+            "turnover_mean": 0.20039113798519032,
+            "transaction_costs": 552.7245060619499,
+            "weight_distribution": {
+              "AAPL": {
+                "mean": 0.10251673961993292,
+                "std_across_dates": 0.014645608986743833,
+                "min": 0.0657058131415397,
+                "max": 0.1422738993540406,
+                "last_target": 0.0657058131415397
+              },
+              "MSFT": {
+                "mean": 0.10173572559351197,
+                "std_across_dates": 0.01828124417731544,
+                "min": 0.04301189985126257,
+                "max": 0.15614341478794813,
+                "last_target": 0.10174864125438035
+              },
+              "JPM": {
+                "mean": 0.10280313106917914,
+                "std_across_dates": 0.013592335590494428,
+                "min": 0.06720106936991216,
+                "max": 0.14066207502037287,
+                "last_target": 0.09000966758467258
+              },
+              "JNJ": {
+                "mean": 0.09920964155771002,
+                "std_across_dates": 0.017298545764028853,
+                "min": 0.04272452020086348,
+                "max": 0.14758973771240563,
+                "last_target": 0.126888218941167
+              },
+              "XOM": {
+                "mean": 0.10464922845200357,
+                "std_across_dates": 0.017454761752363317,
+                "min": 0.05795791102573275,
+                "max": 0.1566015613847412,
+                "last_target": 0.10453231460414827
+              },
+              "PG": {
+                "mean": 0.09221879550834665,
+                "std_across_dates": 0.014349106687488348,
+                "min": 0.047832710598595445,
+                "max": 0.12999635729938747,
+                "last_target": 0.08278753203339875
+              },
+              "KO": {
+                "mean": 0.1011096237647529,
+                "std_across_dates": 0.01912488934056449,
+                "min": 0.05687832869589329,
+                "max": 0.14609556603245438,
+                "last_target": 0.1241583485621959
+              },
+              "WMT": {
+                "mean": 0.1012505162692818,
+                "std_across_dates": 0.018767793674659656,
+                "min": 0.059006487019360065,
+                "max": 0.14534860267303884,
+                "last_target": 0.09580980301834643
+              },
+              "SPY": {
+                "mean": 0.09957406389901778,
+                "std_across_dates": 0.017276296875393577,
+                "min": 0.05064523401670158,
+                "max": 0.14398110166657715,
+                "last_target": 0.11481879898346961
+              },
+              "GLD": {
+                "mean": 0.09493253426626325,
+                "std_across_dates": 0.020684318206105338,
+                "min": 0.03362723556347191,
+                "max": 0.15396776874549686,
+                "last_target": 0.09354086187668145
+              }
+            }
+          },
+          "equity_allocations_sha256": "2ddac2a6b8a8f66be7f8f48ee1e99ad0a9c29cab50f62b6cbfd4faca187f46cf"
+        }
+      }
+    ],
+    "ddpg": [
+      {
+        "candidate_id": "0.001",
+        "fold_id": "wf_2019",
+        "job_id": "645e34b8-3473-46ca-836e-ab7a35c84b07",
+        "evaluation": {
+          "config": {
+            "name": "WF ddpg 0.001 wf_2019",
+            "strategy": "ddpg",
+            "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+            "lookback": 60,
+            "seed": 42,
+            "initial_capital": 10000.0,
+            "transaction_cost_bps": 10.0,
+            "risk_free_rate": 0.0,
+            "reward_mode": "log_return",
+            "risk_penalty": 0.0
+          },
+          "date_start": "2019-01-02",
+          "date_end": "2019-12-31",
+          "intervals": 251,
+          "metrics": {
+            "cumulative_return": -0.01139568426987203,
+            "annualized_volatility": 0.12118466195945209,
+            "sharpe_ratio": -0.03434532907101682,
+            "max_drawdown": 0.10959658859702359,
+            "final_equity": 9886.04315730128,
+            "total_costs": 2621.259574980748
+          },
+          "research_metrics": {
+            "annualized_return": -0.011440824695050934,
+            "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+            "annualized_return_status": "defined",
+            "annualization_factor": 252,
+            "intervals": 251,
+            "turnover_total": 263.3625006816197,
+            "turnover_mean": 1.049252990763425,
+            "transaction_costs": 2621.259574980748,
+            "weight_distribution": {
+              "AAPL": {
+                "mean": 0.05871231453789485,
+                "std_across_dates": 0.08521938976191862,
+                "min": 0.0,
+                "max": 0.3332942326863607,
+                "last_target": 0.0
+              },
+              "MSFT": {
+                "mean": 0.0778773134274749,
+                "std_across_dates": 0.0990594089664423,
+                "min": 0.0,
+                "max": 0.4999433755874634,
+                "last_target": 0.25756150484085083
+              },
+              "JPM": {
+                "mean": 0.06137551586941419,
+                "std_across_dates": 0.11370910527042387,
+                "min": 0.0,
+                "max": 0.45884907245635986,
+                "last_target": 0.0
+              },
+              "JNJ": {
+                "mean": 0.07223467283850338,
+                "std_across_dates": 0.0952857424973522,
+                "min": 0.0,
+                "max": 0.4880516529083252,
+                "last_target": 0.25853782892227173
+              },
+              "XOM": {
+                "mean": 0.24486258006831663,
+                "std_across_dates": 0.10994206297026084,
+                "min": 0.11111218399471706,
+                "max": 1.0,
+                "last_target": 0.2586715817451477
+              },
+              "PG": {
+                "mean": 0.06544046158364804,
+                "std_across_dates": 0.09241453869363134,
+                "min": 0.0,
+                "max": 0.5,
+                "last_target": 0.0
+              },
+              "KO": {
+                "mean": 0.10837543694244604,
+                "std_across_dates": 0.10299531894517791,
+                "min": 0.0,
+                "max": 0.45909802118937176,
+                "last_target": 0.0
+              },
+              "WMT": {
+                "mean": 0.16964412973161247,
+                "std_across_dates": 0.11874773955902651,
+                "min": 0.0,
+                "max": 0.5,
+                "last_target": 0.22522908449172974
+              },
+              "SPY": {
+                "mean": 0.07273641346580939,
+                "std_across_dates": 0.09910488176353291,
+                "min": 0.0,
+                "max": 0.4998841881752014,
+                "last_target": 0.0
+              },
+              "GLD": {
+                "mean": 0.06874116153488015,
+                "std_across_dates": 0.08595518670956605,
+                "min": 0.0,
+                "max": 0.2834990918636322,
+                "last_target": 0.0
+              }
+            }
+          },
+          "equity_allocations_sha256": "d276f65b5de2d145eb0ef90da0ae5c76561d201832ec170ab32cc5ea4958a127"
+        }
+      },
+      {
+        "candidate_id": "0.001",
+        "fold_id": "wf_2021",
+        "job_id": "c65881d0-83c4-46a9-bb3e-92b2eb730427",
+        "evaluation": {
+          "config": {
+            "name": "WF ddpg 0.001 wf_2021",
+            "strategy": "ddpg",
+            "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+            "lookback": 60,
+            "seed": 42,
+            "initial_capital": 10000.0,
+            "transaction_cost_bps": 10.0,
+            "risk_free_rate": 0.0,
+            "reward_mode": "log_return",
+            "risk_penalty": 0.0
+          },
+          "date_start": "2021-01-04",
+          "date_end": "2021-12-31",
+          "intervals": 251,
+          "metrics": {
+            "cumulative_return": -0.08222057501077418,
+            "annualized_volatility": 0.1127766176965492,
+            "sharpe_ratio": -0.7073585391861997,
+            "max_drawdown": 0.14788224515567394,
+            "final_equity": 9177.794249892258,
+            "total_costs": 2203.4093888809075
+          },
+          "research_metrics": {
+            "annualized_return": -0.08253424178888069,
+            "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+            "annualized_return_status": "defined",
+            "annualization_factor": 252,
+            "intervals": 251,
+            "turnover_total": 229.1285769570356,
+            "turnover_mean": 0.9128628564025323,
+            "transaction_costs": 2203.4093888809075,
+            "weight_distribution": {
+              "AAPL": {
+                "mean": 0.038398376192026136,
+                "std_across_dates": 0.07741737514157063,
+                "min": 0.0,
+                "max": 0.3216573794682821,
+                "last_target": 0.0
+              },
+              "MSFT": {
+                "mean": 0.0461451649490558,
+                "std_across_dates": 0.0872100204052785,
+                "min": 0.0,
+                "max": 0.48242515325546265,
+                "last_target": 0.0
+              },
+              "JPM": {
+                "mean": 0.2545720441187385,
+                "std_across_dates": 0.08509230903423178,
+                "min": 0.12554532289505005,
+                "max": 0.6377860903739929,
+                "last_target": 0.33357604344685876
+              },
+              "JNJ": {
+                "mean": 0.0597318967177777,
+                "std_across_dates": 0.10000448902820674,
+                "min": 0.0,
+                "max": 0.4230275948842367,
+                "last_target": 0.0
+              },
+              "XOM": {
+                "mean": 0.01018448865429497,
+                "std_across_dates": 0.04548661853007221,
+                "min": 0.0,
+                "max": 0.32419896125793457,
+                "last_target": 0.0
+              },
+              "PG": {
+                "mean": 0.07373451714530613,
+                "std_across_dates": 0.11124955308414063,
+                "min": 0.0,
+                "max": 0.4999903440475464,
+                "last_target": 0.0
+              },
+              "KO": {
+                "mean": 0.1682627368908502,
+                "std_across_dates": 0.10594959066696996,
+                "min": 0.0,
+                "max": 0.4997512102127075,
+                "last_target": 0.3328764041264852
+              },
+              "WMT": {
+                "mean": 0.13062385726112996,
+                "std_across_dates": 0.11448467623406056,
+                "min": 0.0,
+                "max": 0.4412693977355957,
+                "last_target": 0.3335475524266561
+              },
+              "SPY": {
+                "mean": 0.10480771666798008,
+                "std_across_dates": 0.1408904138084264,
+                "min": 0.0,
+                "max": 0.5000008344650269,
+                "last_target": 0.0
+              },
+              "GLD": {
+                "mean": 0.11353920140284059,
+                "std_across_dates": 0.10294087369577475,
+                "min": 0.0,
+                "max": 0.28847867250442505,
+                "last_target": 0.0
+              }
+            }
+          },
+          "equity_allocations_sha256": "59b41b166cb8b6cc1fee6a8bead2bdcc453012aefe27835d0456dbce83730a9e"
+        }
+      },
+      {
+        "candidate_id": "0.0003",
+        "fold_id": "wf_2019",
+        "job_id": "af36e560-03a5-4fbe-9276-01d85dd4af10",
+        "evaluation": {
+          "config": {
+            "name": "WF ddpg 0.0003 wf_2019",
+            "strategy": "ddpg",
+            "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+            "lookback": 60,
+            "seed": 42,
+            "initial_capital": 10000.0,
+            "transaction_cost_bps": 10.0,
+            "risk_free_rate": 0.0,
+            "reward_mode": "log_return",
+            "risk_penalty": 0.0
+          },
+          "date_start": "2019-01-02",
+          "date_end": "2019-12-31",
+          "intervals": 251,
+          "metrics": {
+            "cumulative_return": -0.06872554585617219,
+            "annualized_volatility": 0.11693575033776261,
+            "sharpe_ratio": -0.5528914167072743,
+            "max_drawdown": 0.1457764879817034,
+            "final_equity": 9312.744541438278,
+            "total_costs": 2665.6630525611968
+          },
+          "research_metrics": {
+            "annualized_return": -0.06898968331220634,
+            "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+            "annualized_return_status": "defined",
+            "annualization_factor": 252,
+            "intervals": 251,
+            "turnover_total": 269.7453049543305,
+            "turnover_mean": 1.0746824898578906,
+            "transaction_costs": 2665.6630525611968,
+            "weight_distribution": {
+              "AAPL": {
+                "mean": 0.08158006704728848,
+                "std_across_dates": 0.1049266306370509,
+                "min": 0.0,
+                "max": 0.3956599235534668,
+                "last_target": 0.0
+              },
+              "MSFT": {
+                "mean": 0.06598089127641457,
+                "std_across_dates": 0.11310386127471117,
+                "min": 0.0,
+                "max": 0.5002361536026001,
+                "last_target": 0.22581923007965088
+              },
+              "JPM": {
+                "mean": 0.07443016059901633,
+                "std_across_dates": 0.11633438708784002,
+                "min": 0.0,
+                "max": 0.4732484221458435,
+                "last_target": 0.0
+              },
+              "JNJ": {
+                "mean": 0.06392842244319412,
+                "std_across_dates": 0.10125207793258421,
+                "min": 0.0,
+                "max": 0.49833714962005615,
+                "last_target": 0.0
+              },
+              "XOM": {
+                "mean": 0.2737775373755133,
+                "std_across_dates": 0.10224969725783806,
+                "min": 0.12949442863464355,
+                "max": 0.6543121337890625,
+                "last_target": 0.21946430206298828
+              },
+              "PG": {
+                "mean": 0.04901671306477668,
+                "std_across_dates": 0.09536332975701928,
+                "min": 0.0,
+                "max": 0.37938364346822107,
+                "last_target": 0.0
+              },
+              "KO": {
+                "mean": 0.12602682552851485,
+                "std_across_dates": 0.13159449365014458,
+                "min": 0.0,
+                "max": 0.5109784007072449,
+                "last_target": 0.222556471824646
+              },
+              "WMT": {
+                "mean": 0.11949368622786541,
+                "std_across_dates": 0.11138242914698357,
+                "min": 0.0,
+                "max": 0.49639254808425903,
+                "last_target": 0.10636258125305176
+              },
+              "SPY": {
+                "mean": 0.05187795743207691,
+                "std_across_dates": 0.09892475805496738,
+                "min": 0.0,
+                "max": 0.4999324679374695,
+                "last_target": 0.0
+              },
+              "GLD": {
+                "mean": 0.0938877390053394,
+                "std_across_dates": 0.10232645859193341,
+                "min": 0.0,
+                "max": 0.384143203496933,
+                "last_target": 0.22579741477966309
+              }
+            }
+          },
+          "equity_allocations_sha256": "c19b45491f3044dba43d4a8bfc6203da2be8d6aec93baf31e9d6c3767273f97e"
+        }
+      },
+      {
+        "candidate_id": "0.0003",
+        "fold_id": "wf_2021",
+        "job_id": "136bfad0-51c7-4fb0-bf57-5f53f8ddc671",
+        "evaluation": {
+          "config": {
+            "name": "WF ddpg 0.0003 wf_2021",
+            "strategy": "ddpg",
+            "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+            "lookback": 60,
+            "seed": 42,
+            "initial_capital": 10000.0,
+            "transaction_cost_bps": 10.0,
+            "risk_free_rate": 0.0,
+            "reward_mode": "log_return",
+            "risk_penalty": 0.0
+          },
+          "date_start": "2021-01-04",
+          "date_end": "2021-12-31",
+          "intervals": 251,
+          "metrics": {
+            "cumulative_return": -0.14835918389572322,
+            "annualized_volatility": 0.11876091243953478,
+            "sharpe_ratio": -1.2978361593661911,
+            "max_drawdown": 0.20675667006001086,
+            "final_equity": 8516.408161042767,
+            "total_costs": 2981.5145767693803
+          },
+          "research_metrics": {
+            "annualized_return": -0.14890389151681838,
+            "annualized_return_definition": "exp(log(V_end/V_start)*252/net_return_count)-1",
+            "annualized_return_status": "defined",
+            "annualization_factor": 252,
+            "intervals": 251,
+            "turnover_total": 333.41181466469277,
+            "turnover_mean": 1.3283339229669036,
+            "transaction_costs": 2981.5145767693803,
+            "weight_distribution": {
+              "AAPL": {
+                "mean": 0.07978626429876325,
+                "std_across_dates": 0.13771232375215428,
+                "min": 0.0,
+                "max": 0.5483655134836833,
+                "last_target": 0.3419932921727499
+              },
+              "MSFT": {
+                "mean": 0.12440433804574083,
+                "std_across_dates": 0.16603543740229326,
+                "min": 0.0,
+                "max": 0.7289403676986694,
+                "last_target": 0.0
+              },
+              "JPM": {
+                "mean": 0.022160715624630692,
+                "std_across_dates": 0.06869510897047372,
+                "min": 0.0,
+                "max": 0.36952412128448486,
+                "last_target": 0.0
+              },
+              "JNJ": {
+                "mean": 0.0759459075224827,
+                "std_across_dates": 0.14417242997695123,
+                "min": 0.0,
+                "max": 0.9979372024536133,
+                "last_target": 0.0
+              },
+              "XOM": {
+                "mean": 0.019706626503591042,
+                "std_across_dates": 0.06997826303162624,
+                "min": 0.0,
+                "max": 0.43813339869181306,
+                "last_target": 0.0
+              },
+              "PG": {
+                "mean": 0.12635289699749486,
+                "std_across_dates": 0.20910934057995523,
+                "min": 0.0,
+                "max": 1.0,
+                "last_target": 0.0
+              },
+              "KO": {
+                "mean": 0.09894441571210329,
+                "std_across_dates": 0.1507177134745914,
+                "min": 0.0,
+                "max": 0.5557683110237122,
+                "last_target": 0.0
+              },
+              "WMT": {
+                "mean": 0.07907794662126666,
+                "std_across_dates": 0.12451471362114748,
+                "min": 0.0,
+                "max": 0.4980061650276184,
+                "last_target": 0.30249508221944177
+              },
+              "SPY": {
+                "mean": 0.13946862595568932,
+                "std_across_dates": 0.22488420549026178,
+                "min": 0.0,
+                "max": 1.0,
+                "last_target": 0.0
+              },
+              "GLD": {
+                "mean": 0.23415226271823741,
+                "std_across_dates": 0.17960277279913459,
+                "min": 0.0,
+                "max": 0.9803342521190643,
+                "last_target": 0.35551162560780847
+              }
+            }
+          },
+          "equity_allocations_sha256": "ef7cd9158378043bcb30777ede5e00d62ee96c6ad8a486188ff6478d43b55c25"
+        }
+      }
+    ]
+  },
+  "continuation": {
+    "reused_completed_jobs": 13,
+    "interrupted_job_id": "c86e5587-af8c-40df-9db9-e39852878b4c",
+    "last_recorded_step": 2080,
+    "retry_job_id": "e78d175d-b651-45e9-b152-73982be2adc0",
+    "retried_same_configuration": true
+  }
+}

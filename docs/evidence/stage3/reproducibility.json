@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "reference_report": ".runtime/stage3/smoke-report.json",
+  "reference_report_sha256": "b31ea02dd884d48b950156b30728b495614e5ee22199a82604e3b53a3a68f53a",
+  "data_mode": "HISTORICAL",
+  "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+  "dataset_sha256": "bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+  "holdout_2024_evaluated": false,
+  "runs": {
+    "ppo": {
+      "reference_job_id": "5e4563bb-dab0-4e5a-8ec8-51c58c572f2e",
+      "repeat_artifact": ".runtime/stage3/reproducibility/run-p182djex/ppo",
+      "configuration_sha256": "6f820ec6d44e63d85e49d4ebfe44f43f501fb78a34ae4b1c1108b52dba73bc8d",
+      "seed": 42,
+      "timesteps": 256,
+      "training_dates": [
+        "2015-01-02",
+        "2021-12-31"
+      ],
+      "training_rows": 1763,
+      "policy_tensor_count": 13,
+      "policy_tensor_sha256": {
+        "reference": "677b10acb3c3d06e420c5d7acb7e211d91715b85fe88fa105751d68948300861",
+        "repeat": "677b10acb3c3d06e420c5d7acb7e211d91715b85fe88fa105751d68948300861"
+      },
+      "validation": {
+        "split": "validation",
+        "start_date": "2022-01-03",
+        "end_date": "2023-12-29",
+        "intervals": 500,
+        "holdout_evaluated": false,
+        "action_vectors": 500,
+        "equity_points": 501,
+        "metrics": {
+          "cumulative_return": 0.10766622410145454,
+          "annualized_volatility": 0.1436661595403942,
+          "sharpe_ratio": 0.43043347845728536,
+          "max_drawdown": 0.15564309204132065,
+          "final_equity": 11076.662241014545,
+          "total_costs": 517.2014744511768
+        }
+      },
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "device": "cpu",
+      "torch_threads": 1,
+      "checks": {
+        "completed_requested_steps": true,
+        "same_training_protocol": true,
+        "normalizer_exact": true,
+        "policy_tensors_exact": true,
+        "validation_actions_exact": true,
+        "validation_equity_exact": true,
+        "validation_allocations_exact": true,
+        "validation_metrics_match_smoke": true,
+        "holdout_excluded": true
+      }
+    },
+    "ddpg": {
+      "reference_job_id": "475d795a-2d81-43fb-9232-8e416d187e5d",
+      "repeat_artifact": ".runtime/stage3/reproducibility/run-p182djex/ddpg",
+      "configuration_sha256": "0374575333e34e071b25ca614551a2a4ad48d397c384ab10de3262e7b6b10f2f",
+      "seed": 42,
+      "timesteps": 256,
+      "training_dates": [
+        "2015-01-02",
+        "2021-12-31"
+      ],
+      "training_rows": 1763,
+      "policy_tensor_count": 24,
+      "policy_tensor_sha256": {
+        "reference": "a04834210195bd7232fb0e652276619e87156bcd297b915e1c1d31dacc55217d",
+        "repeat": "a04834210195bd7232fb0e652276619e87156bcd297b915e1c1d31dacc55217d"
+      },
+      "validation": {
+        "split": "validation",
+        "start_date": "2022-01-03",
+        "end_date": "2023-12-29",
+        "intervals": 500,
+        "holdout_evaluated": false,
+        "action_vectors": 500,
+        "equity_points": 501,
+        "metrics": {
+          "cumulative_return": -0.3985421816794845,
+          "annualized_volatility": 0.1538783087094958,
+          "sharpe_ratio": -1.5874299472755222,
+          "max_drawdown": 0.4188978401306823,
+          "final_equity": 6014.578183205155,
+          "total_costs": 4475.917151211544
+        }
+      },
+      "dependencies": {
+        "numpy": "2.4.6",
+        "torch": "2.15.0+cpu",
+        "gymnasium": "1.4.0",
+        "stable-baselines3": "2.9.2"
+      },
+      "device": "cpu",
+      "torch_threads": 1,
+      "checks": {
+        "completed_requested_steps": true,
+        "same_training_protocol": true,
+        "normalizer_exact": true,
+        "policy_tensors_exact": true,
+        "validation_actions_exact": true,
+        "validation_equity_exact": true,
+        "validation_allocations_exact": true,
+        "validation_metrics_match_smoke": true,
+        "holdout_excluded": true
+      }
+    }
+  }
+}

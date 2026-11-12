@@ -1,0 +1,108 @@
+{
+  "started_at": "2026-11-10T14:43:07.095514Z",
+  "status": "completed",
+  "symbols": {
+    "JPM": {
+      "status": "downloaded",
+      "symbol": "JPM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/JPM?period1=1420070400&period2=1735689600&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "fetched_at": "2026-11-10T05:02:10.908930Z",
+      "sha256": "91a0cadddebcfb34e57cab3cf435289ddfdead94bd626f0dd439e8ca5e64948b",
+      "duration_seconds": 43.0,
+      "http_status": 200,
+      "retrieval": "reused_verified_local_response"
+    },
+    "MSFT": {
+      "status": "downloaded",
+      "symbol": "MSFT",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?period1=1420070400&period2=1735689600&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "fetched_at": "2026-11-10T05:02:10.794616Z",
+      "sha256": "215e7a04f9d59382007217a8e8bd44255d6614a392eedb7a4b979fa7ce2e93f2",
+      "duration_seconds": 42.891,
+      "http_status": 200,
+      "retrieval": "reused_verified_local_response"
+    },
+    "AAPL": {
+      "status": "downloaded",
+      "symbol": "AAPL",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?period1=1420070400&period2=1735689600&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "fetched_at": "2026-11-10T05:02:10.794616Z",
+      "sha256": "63e969cc9471bd3acf584a2924d89f077acbbc649252a3d842f0cecd91e604bd",
+      "duration_seconds": 42.875,
+      "http_status": 200,
+      "retrieval": "reused_verified_local_response"
+    },
+    "XOM": {
+      "status": "downloaded",
+      "symbol": "XOM",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/XOM?period1=1420070400&period2=1735689600&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "fetched_at": "2026-11-10T05:02:53.910414Z",
+      "sha256": "f297461223afd1ac6dd544d9c2ee3acaf246eb1b87ee02f536eb839a310b00df",
+      "duration_seconds": 42.875,
+      "http_status": 200,
+      "retrieval": "reused_verified_local_response"
+    },
+    "PG": {
+      "status": "downloaded",
+      "symbol": "PG",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/PG?period1=1420070400&period2=1735689600&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "fetched_at": "2026-11-10T05:02:53.908907Z",
+      "sha256": "103f1411684019aa1941e7da5470856a73e9616c83cf56adb4876f2c577d8e52",
+      "duration_seconds": 42.843,
+      "http_status": 200,
+      "retrieval": "reused_verified_local_response"
+    },
+    "JNJ": {
+      "status": "downloaded",
+      "symbol": "JNJ",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/JNJ?period1=1420070400&period2=1735689600&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "fetched_at": "2026-11-10T05:02:53.863722Z",
+      "sha256": "9549c69511b6caac9b59c73811255c3e5661be77f6daac33c1b322b5d0f1590e",
+      "duration_seconds": 42.843,
+      "http_status": 200,
+      "retrieval": "reused_verified_local_response"
+    },
+    "WMT": {
+      "status": "downloaded",
+      "symbol": "WMT",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/WMT?period1=1420070400&period2=1735689600&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "fetched_at": "2026-11-10T05:03:36.913406Z",
+      "sha256": "8828973c31ae888b86707aaf0a78894c8e500dd15e864e6561abaa1e891df6d1",
+      "duration_seconds": 42.875,
+      "http_status": 200,
+      "retrieval": "reused_verified_local_response"
+    },
+    "KO": {
+      "status": "downloaded",
+      "symbol": "KO",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/KO?period1=1420070400&period2=1735689600&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "fetched_at": "2026-11-10T05:03:36.796456Z",
+      "sha256": "63f478e506d38ca98f56968d859c2f408e1a31ea6b5eab885cb4f3192521d088",
+      "duration_seconds": 42.781,
+      "http_status": 200,
+      "retrieval": "reused_verified_local_response"
+    },
+    "SPY": {
+      "status": "downloaded",
+      "symbol": "SPY",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=1420070400&period2=1735689600&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "fetched_at": "2026-11-10T05:03:36.866772Z",
+      "sha256": "8063e0ae661871c89ed0c6295f4d05912339122824e60580261a46c98d4bf890",
+      "duration_seconds": 42.796,
+      "http_status": 200,
+      "retrieval": "reused_verified_local_response"
+    },
+    "GLD": {
+      "status": "downloaded",
+      "symbol": "GLD",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GLD?period1=1420070400&period2=1735689600&interval=1d&events=div%2Csplits&includeAdjustedClose=true",
+      "fetched_at": "2026-11-10T05:04:20.293157Z",
+      "sha256": "4bcdaa2dcfb7ddd6c0d356d756f3e29d02879a2b173bccb5828842104133526d",
+      "duration_seconds": 42.953,
+      "http_status": 200,
+      "retrieval": "reused_verified_local_response"
+    }
+  },
+  "finished_at": "2026-11-10T14:43:08.095156Z",
+  "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0"
+}

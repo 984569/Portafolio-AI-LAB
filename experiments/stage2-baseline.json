@@ -1,0 +1,9 @@
+{
+  "split": "validation",
+  "lookback": 60,
+  "risk_aversion": 5,
+  "initial_capital": 10000,
+  "transaction_cost_bps": 10,
+  "risk_free_rate": 0,
+  "seed": 42
+}

@@ -1,0 +1,305 @@
+{
+  "authenticated_inference_verified": false,
+  "holdout_2024_used": false,
+  "recovered_after_restart": true,
+  "run": {
+    "id": "d4aeae87-f9f3-4e4f-844b-f9dbada88af0",
+    "status": "blocked",
+    "mode": "PAPER",
+    "scope": "llm_exploratory_historical",
+    "created_at": "2026-11-11T20:25:05.423576Z",
+    "finished_at": "2026-11-11T20:25:10.062120Z",
+    "request": {
+      "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+      "decision_date": "2023-12-20",
+      "strategy": "equal_weight",
+      "model_id": null
+    },
+    "provider": {
+      "enabled": true,
+      "provider": "openrouter",
+      "model": "liquid/lfm-3-1.7b:free",
+      "endpoint_provider": "liquid/fp8",
+      "code": "configured"
+    },
+    "outcome": {
+      "decision": "blocked",
+      "code": "provider_http",
+      "dossier": {
+        "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "dataset_sha256": "bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+        "decision_date": "2023-12-20",
+        "information_date": "2023-12-20",
+        "assets": [
+          "AAPL",
+          "MSFT",
+          "JPM",
+          "JNJ",
+          "XOM",
+          "PG",
+          "KO",
+          "WMT",
+          "SPY",
+          "GLD"
+        ],
+        "observations": 61,
+        "lookback": 60,
+        "market_return": 0.043391905699107,
+        "market_volatility": 0.08675520784512837
+      },
+      "analysis": null,
+      "candidate": null,
+      "judgment": null,
+      "risk": {
+        "passed": false,
+        "gates": [
+          {
+            "name": "snapshot",
+            "passed": true,
+            "reason_code": "ok",
+            "observed": null,
+            "threshold": null,
+            "decision_date": "2023-12-20"
+          },
+          {
+            "name": "chronology",
+            "passed": true,
+            "reason_code": "ok",
+            "observed": "2023-12-20",
+            "threshold": "Same XNYS close in 2022\u20132023",
+            "decision_date": "2023-12-20"
+          },
+          {
+            "name": "dossier_universe",
+            "passed": true,
+            "reason_code": "ok",
+            "observed": null,
+            "threshold": null,
+            "decision_date": "2023-12-20"
+          },
+          {
+            "name": "coverage",
+            "passed": true,
+            "reason_code": "ok",
+            "observed": 61.0,
+            "threshold": "lookback + 1 closes; 2\u2013120 returns",
+            "decision_date": "2023-12-20"
+          },
+          {
+            "name": "market_return",
+            "passed": true,
+            "reason_code": "ok",
+            "observed": 0.043391905699107,
+            "threshold": "finite and greater than \u22121",
+            "decision_date": "2023-12-20"
+          },
+          {
+            "name": "market_volatility",
+            "passed": true,
+            "reason_code": "ok",
+            "observed": 0.08675520784512837,
+            "threshold": "finite and nonnegative",
+            "decision_date": "2023-12-20"
+          },
+          {
+            "name": "provider",
+            "passed": false,
+            "reason_code": "provider_unverified",
+            "observed": null,
+            "threshold": null,
+            "decision_date": "2023-12-20"
+          },
+          {
+            "name": "candidate",
+            "passed": false,
+            "reason_code": "missing_candidate",
+            "observed": null,
+            "threshold": null,
+            "decision_date": "2023-12-20"
+          }
+        ],
+        "policy_version": "desk-cash-v1"
+      }
+    },
+    "events": [
+      {
+        "sequence": 1,
+        "recorded_at": "2026-11-11T20:25:08.670090Z",
+        "event": {
+          "stage": "data",
+          "status": "completed",
+          "code": "dossier_verified",
+          "payload": {
+            "dataset_id": "historical-bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+            "dataset_sha256": "bfc0b8e79e60e0c5dfaff18c52af7a113734a4c2be7fd4c849949deec3d4ebd0",
+            "decision_date": "2023-12-20",
+            "information_date": "2023-12-20",
+            "assets": [
+              "AAPL",
+              "MSFT",
+              "JPM",
+              "JNJ",
+              "XOM",
+              "PG",
+              "KO",
+              "WMT",
+              "SPY",
+              "GLD"
+            ],
+            "observations": 61,
+            "lookback": 60,
+            "market_return": 0.043391905699107,
+            "market_volatility": 0.08675520784512837
+          },
+          "provider": null
+        }
+      },
+      {
+        "sequence": 2,
+        "recorded_at": "2026-11-11T20:25:10.035122Z",
+        "event": {
+          "stage": "analyst",
+          "status": "blocked",
+          "code": "provider_http",
+          "payload": {},
+          "provider": {
+            "provider": "openrouter",
+            "model": "liquid/lfm-3-1.7b:free",
+            "endpoint_provider": "liquid/fp8",
+            "stage": "analyst",
+            "attempts": 1,
+            "prompt_tokens": null,
+            "completion_tokens": null,
+            "total_tokens": null,
+            "elapsed_ms": 1359,
+            "config": {
+              "model": "liquid/lfm-3-1.7b:free",
+              "endpoint_provider": "liquid/fp8",
+              "base_url": "https://openrouter.ai/api/v1",
+              "timeout_seconds": 12.0,
+              "retries": 1,
+              "requests_per_minute": 12,
+              "requests_per_day": 40,
+              "prompt_version": "agent-desk-closed-labels-v1",
+              "temperature": 0,
+              "max_tokens": 512,
+              "response_format": "json_schema",
+              "allow_fallbacks": false,
+              "require_parameters": true,
+              "disabled_plugins": [
+                "web",
+                "response-healing"
+              ],
+              "verified_parameters": [
+                "max_tokens",
+                "response_format",
+                "structured_outputs",
+                "temperature"
+              ],
+              "endpoint_context_length": 262144,
+              "max_price_usd": 0,
+              "reasoning_enabled": false,
+              "attempt_errors": [
+                "provider_http"
+              ]
+            },
+            "request_id": null
+          }
+        }
+      },
+      {
+        "sequence": 3,
+        "recorded_at": "2026-11-11T20:25:10.049123Z",
+        "event": {
+          "stage": "risk",
+          "status": "blocked",
+          "code": "risk_veto",
+          "payload": {
+            "passed": false,
+            "gates": [
+              {
+                "name": "snapshot",
+                "passed": true,
+                "reason_code": "ok",
+                "observed": null,
+                "threshold": null,
+                "decision_date": "2023-12-20"
+              },
+              {
+                "name": "chronology",
+                "passed": true,
+                "reason_code": "ok",
+                "observed": "2023-12-20",
+                "threshold": "Same XNYS close in 2022\u20132023",
+                "decision_date": "2023-12-20"
+              },
+              {
+                "name": "dossier_universe",
+                "passed": true,
+                "reason_code": "ok",
+                "observed": null,
+                "threshold": null,
+                "decision_date": "2023-12-20"
+              },
+              {
+                "name": "coverage",
+                "passed": true,
+                "reason_code": "ok",
+                "observed": 61.0,
+                "threshold": "lookback + 1 closes; 2\u2013120 returns",
+                "decision_date": "2023-12-20"
+              },
+              {
+                "name": "market_return",
+                "passed": true,
+                "reason_code": "ok",
+                "observed": 0.043391905699107,
+                "threshold": "finite and greater than \u22121",
+                "decision_date": "2023-12-20"
+              },
+              {
+                "name": "market_volatility",
+                "passed": true,
+                "reason_code": "ok",
+                "observed": 0.08675520784512837,
+                "threshold": "finite and nonnegative",
+                "decision_date": "2023-12-20"
+              },
+              {
+                "name": "provider",
+                "passed": false,
+                "reason_code": "provider_unverified",
+                "observed": null,
+                "threshold": null,
+                "decision_date": "2023-12-20"
+              },
+              {
+                "name": "candidate",
+                "passed": false,
+                "reason_code": "missing_candidate",
+                "observed": null,
+                "threshold": null,
+                "decision_date": "2023-12-20"
+              }
+            ],
+            "policy_version": "desk-cash-v1"
+          },
+          "provider": null
+        }
+      },
+      {
+        "sequence": 4,
+        "recorded_at": "2026-11-11T20:25:10.059123Z",
+        "event": {
+          "stage": "final",
+          "status": "blocked",
+          "code": "provider_http",
+          "payload": {
+            "decision": "blocked"
+          },
+          "provider": null
+        }
+      }
+    ]
+  }
+}

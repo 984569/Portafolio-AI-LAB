@@ -1,0 +1,141 @@
+{
+  "status": "passed",
+  "calendar": "XNYS",
+  "start_date": "2015-01-02",
+  "end_date": "2024-12-31",
+  "observations": 2516,
+  "assets": [
+    {
+      "symbol": "AAPL",
+      "observations": 2516,
+      "missing_sessions": 0,
+      "duplicate_sessions": 0,
+      "invalid_price_cells": 0,
+      "dividend_events": 40,
+      "split_events": 1,
+      "adjustment_factor_min": 0.8843591599387434,
+      "adjustment_factor_max": 0.9927953869003239,
+      "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+    },
+    {
+      "symbol": "MSFT",
+      "observations": 2516,
+      "missing_sessions": 0,
+      "duplicate_sessions": 0,
+      "invalid_price_cells": 0,
+      "dividend_events": 40,
+      "split_events": 0,
+      "adjustment_factor_min": 0.847030992356815,
+      "adjustment_factor_max": 0.9864193228116649,
+      "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+    },
+    {
+      "symbol": "JPM",
+      "observations": 2516,
+      "missing_sessions": 0,
+      "duplicate_sessions": 0,
+      "invalid_price_cells": 0,
+      "dividend_events": 40,
+      "split_events": 0,
+      "adjustment_factor_min": 0.733526768790419,
+      "adjustment_factor_max": 0.9607659050044265,
+      "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+    },
+    {
+      "symbol": "JNJ",
+      "observations": 2516,
+      "missing_sessions": 0,
+      "duplicate_sessions": 0,
+      "invalid_price_cells": 0,
+      "dividend_events": 40,
+      "split_events": 0,
+      "adjustment_factor_min": 0.7246205660032243,
+      "adjustment_factor_max": 0.9549389735332651,
+      "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+    },
+    {
+      "symbol": "XOM",
+      "observations": 2516,
+      "missing_sessions": 0,
+      "duplicate_sessions": 0,
+      "invalid_price_cells": 0,
+      "dividend_events": 40,
+      "split_events": 0,
+      "adjustment_factor_min": 0.6116329283351694,
+      "adjustment_factor_max": 0.9456281696793803,
+      "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+    },
+    {
+      "symbol": "PG",
+      "observations": 2516,
+      "missing_sessions": 0,
+      "duplicate_sessions": 0,
+      "invalid_price_cells": 0,
+      "dividend_events": 40,
+      "split_events": 0,
+      "adjustment_factor_min": 0.7147506755097027,
+      "adjustment_factor_max": 0.9467793333475922,
+      "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+    },
+    {
+      "symbol": "KO",
+      "observations": 2516,
+      "missing_sessions": 0,
+      "duplicate_sessions": 0,
+      "invalid_price_cells": 0,
+      "dividend_events": 40,
+      "split_events": 0,
+      "adjustment_factor_min": 0.6933060608549626,
+      "adjustment_factor_max": 0.952834775618579,
+      "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+    },
+    {
+      "symbol": "WMT",
+      "observations": 2516,
+      "missing_sessions": 0,
+      "duplicate_sessions": 0,
+      "invalid_price_cells": 0,
+      "dividend_events": 40,
+      "split_events": 1,
+      "adjustment_factor_min": 0.8057845823055058,
+      "adjustment_factor_max": 0.9842509365746931,
+      "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+    },
+    {
+      "symbol": "SPY",
+      "observations": 2516,
+      "missing_sessions": 0,
+      "duplicate_sessions": 0,
+      "invalid_price_cells": 0,
+      "dividend_events": 40,
+      "split_events": 0,
+      "adjustment_factor_min": 0.8239666421656028,
+      "adjustment_factor_max": 0.9807330196249141,
+      "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+    },
+    {
+      "symbol": "GLD",
+      "observations": 2516,
+      "missing_sessions": 0,
+      "duplicate_sessions": 0,
+      "invalid_price_cells": 0,
+      "dividend_events": 0,
+      "split_events": 0,
+      "adjustment_factor_min": 1.0,
+      "adjustment_factor_max": 1.0,
+      "adjustment_policy": "Vendor adjusted close; events retained, not double-added"
+    }
+  ],
+  "missing_data_policy": "Reject; no fill, interpolation or session dropping",
+  "corporate_action_verification": "Schema/numeric consistency only; vendor not independently reconciled",
+  "limitations": [
+    "Public unofficial endpoint: availability, throttling and revisions are not guaranteed.",
+    "Personal educational/research use; provider terms do not imply redistribution rights.",
+    "Adjusted history is retrospectively revised, not a point-in-time vintage database.",
+    "Provider Close may already include split adjustments; it is not an unadjusted quote.",
+    "Corporate-action fields are vendor assertions, not independently reconciled evidence.",
+    "XNYS is the common US equity-session proxy, including Nasdaq-listed instruments.",
+    "The fixed current universe creates a disclosed survivorship/selection limitation.",
+    "No fills, synthetic replacements, dividend double-counting or test-period tuning."
+  ]
+}
